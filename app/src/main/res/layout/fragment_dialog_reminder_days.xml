@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_day_s_to_set_reminder"
+        android:layout_margin="30dp"
+        android:textSize="25sp">
+    </TextView>
+
+    <LinearLayout
+        android:id="@+id/CBgroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="20dp">
+
+        <CheckBox
+            android:id="@+id/monCB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/monday">
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/tueCB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tuesday">
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/wedCB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/wednesday">
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/thuCB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/thursday">
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/friCB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/friday">
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/satCB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/saturday">
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/sunCB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sunday">
+        </CheckBox>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancelBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancelBtn"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/design_default_color_error">
+        </Button>
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/saveBtn"
+            android:layout_margin="20dp">
+        </Button>
+
+    </LinearLayout>
+
+</LinearLayout>

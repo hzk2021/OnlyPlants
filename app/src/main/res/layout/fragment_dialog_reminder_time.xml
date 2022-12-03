@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_time_to_set_reminder"
+        android:layout_margin="30dp"
+        android:textSize="25sp">
+    </TextView>
+
+    <TimePicker
+        android:id="@+id/reminderTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:timePickerMode="spinner"
+        android:paddingTop="50dp"
+        android:paddingBottom="50dp">
+    </TimePicker>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancelBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancelBtn"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/design_default_color_error">
+        </Button>
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/saveBtn"
+            android:layout_margin="20dp">
+        </Button>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
