@@ -53,7 +53,11 @@ dependencies {
     implementation("aws.sdk.kotlin:translate:0.17.0-beta")
     implementation("aws.sdk.kotlin:dynamodb:0.17.0-beta")
 
-
+    // Added for location services:
+    implementation 'org.maplibre.gl:android-sdk:9.5.2'
+    implementation 'com.amplifyframework:aws-auth-cognito:1.31.3'
+    implementation 'com.amplifyframework:aws-geo-location:0.3.1'
+    implementation 'com.amplifyframework:maplibre-adapter:0.3.1'
 
     // Fotoapparat & Material Design (Camera)
     implementation 'io.fotoapparat:fotoapparat:2.6.1'
