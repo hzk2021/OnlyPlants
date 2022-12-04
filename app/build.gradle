@@ -46,14 +46,22 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
 
     // AWS Dependencies (add whatever you need). DO NOT USE BETA VERSIONS.
-    implementation("aws.sdk.kotlin:apigateway:0.16.0")
-    implementation("aws.sdk.kotlin:s3:0.16.0")
-    implementation("aws.sdk.kotlin:lambda:0.16.0")
-    implementation("aws.sdk.kotlin:rekognition:0.16.0")
+
+    implementation("aws.sdk.kotlin:apigateway:0.17.0-beta")
+    implementation("aws.sdk.kotlin:s3:0.17.0-beta")
+    implementation("aws.sdk.kotlin:lambda:0.17.0-beta")
+    implementation("aws.sdk.kotlin:rekognition:0.17.0-beta")
+    implementation("aws.sdk.kotlin:translate:0.17.0-beta")
+    implementation("aws.sdk.kotlin:dynamodb:0.17.0-beta")
+
+
 
     // Fotoapparat & Material Design (Camera)
     implementation 'io.fotoapparat:fotoapparat:2.6.1'
     implementation 'com.google.android.material:material:1.0.0.0-rc01'
+
+    // HTTP
+    implementation 'com.squareup.okhttp3:okhttp:3.8.1'
 
 
 }
