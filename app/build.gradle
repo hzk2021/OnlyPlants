@@ -63,5 +63,7 @@ dependencies {
     implementation 'io.fotoapparat:fotoapparat:2.6.1'
     implementation 'com.google.android.material:material:1.0.0.0-rc01'
 
-
+    // For Text-to-speech service
+    implementation("aws.sdk.kotlin:polly:0.17.7-beta")
+    implementation("com.googlecode.soundlibs:jlayer:1.0.1.4")
 }
