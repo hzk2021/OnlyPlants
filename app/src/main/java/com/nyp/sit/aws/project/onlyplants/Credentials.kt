@@ -4,10 +4,12 @@ import aws.smithy.kotlin.runtime.auth.awscredentials.Credentials
 
 object Credentials {
 
+    // sup guys, please put/replace your AWS credentials here =)
+
     val mainAccount = Credentials("AKIA3NYMVU3R3ZBCXMWM",
         "CfPpicm2xG+UeEsDai7clleHCsVYJMHMLAhMaMbY")
 
-    val learnersLab = Credentials("ASIAXVBGKVUT3YQQJDFA",
-        "HletC19IX2z1AcYeDl9hlP6LMjkekndpcQytPxWZ",
-        "FwoGZXIvYXdzEK7//////////wEaDEthmV1NvKu1MorCJSK7AW0PIWS6PjtEVoWAbl+pW45hjXlj7rB47LUOGDwVCvnq77HmzrW+KJMPLqFa07QqrTaDdQV/1P1IfsIefeJV5IpsZgZVIShQWSh6hn4TD0cbRwDzCqTbw8Q1BkhIvZlhBnk97i0PlxBt9t/kRWUBr3O5wnxzsup4m4LExmOCNEly7LTQuow0QSSzZ/BChmfzjSq0uKrGndiDrv6pVrTjiA/WUv7HWzbvY3p2Lr50JUHNDLwG2KYNu3217CcohaOrnAYyLcMbzM8p5OGGSFOH3f6BmsDVJ7HBE15KdQHtJTQQs3S3l8B+Yl80Gvh9UlQFTg==")
+    val learnersLab = Credentials("ASIAWMTXAENCPGAGFJXQ",
+        "vykTeeQRzmZHu2x+no7lsEFs/T/n47QDkoeuAG1m",
+        "FwoGZXIvYXdzELH//////////wEaDCWU8UmDveiU49bWMiK7ARRuLlF6hOYiFqyM1SGBsRrueCnhGBItOImO8W12dn1eJCLBeXixtpvz5h6H1dAF0PI1jpFilN2DG401lt4Tk9NyG0IC8E7YsDnkeljH1zMfIoBhLy9ZU8eM20IA6PtGS4/zIpqtLoVozDmOroORiU1TQIJusQKTK0vuvi9AJBJ0CYS4hcHwwRqzPtGesC2mIo840X+SzcdL7n7/zGB/4yQE27IpwKLI1TvWTqmDg2sUBfhiD1N+6v5HAMQowPKrnAYyLUwB9iO+81KDU0CRzZQtTaiYIm+QmjoUFWkC/JSgeKf8Y/d7SKWoXEt7w+wihQ==")
 }
