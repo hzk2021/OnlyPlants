@@ -20,7 +20,6 @@ class PlantService {
 
 
     /** Currently using mock API endpoints, will change later **/
-
     suspend fun GetPlantInformation(plant_name : String) : String {
 
         val uriPath = "$protocol$domain$getPlantInfoPath?name=$plant_name"
@@ -43,7 +42,7 @@ class PlantService {
         return plantInfo
     }
 
-    suspend fun GetPlantType(plant_image_in_bytes : ByteArray) : Deferred<String> = CoroutineScope(IO).async {
+    suspend fun GetPlantType(plant_image_in_bytes : ByteArray) : String {
 
         val uriPath = "$protocol$domain$getPlantTypePath?image_bytes=$plant_image_in_bytes"
         val request = Request.Builder().url(uriPath).build()
@@ -52,18 +51,17 @@ class PlantService {
 
         Log.d("Getting plant type from", uriPath)
 
-        client.newCall(request).enqueue(object : Callback {
-            override fun onResponse(call: Call, response: Response) {
-                plantType = JSONObject(response.body.string()).getString("message").toString()
-                Log.d("PlantTypeReply", response.body.string())
-            }
+        val response = client.newCall(request).execute()
 
-            override fun onFailure(call: Call, e: IOException) {
-                //TODO("Not yet implemented")
-                Log.d("PlantTypeRetrievalError", e.toString())
-            }
-        })
+        if (response.isSuccessful) {
+            plantType = JSONObject(response.body.string()).getString("message").toString()
+            Log.d("PlantTypeReply", plantType)
+        } else {
+            Log.d("PlantTypeRetrievalError", response.message)
+            plantType = "RetrievalError"
+        }
 
-        return@async plantType
+        return plantType
+
     }
 }
