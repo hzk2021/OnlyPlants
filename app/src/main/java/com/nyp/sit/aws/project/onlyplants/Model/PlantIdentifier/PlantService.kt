@@ -11,7 +11,7 @@ class PlantService {
 
     private val client = OkHttpClient()
     private val protocol = "https://"
-    private val domain = "vmo0ymtfn1.execute-api.us-east-1.amazonaws.com"
+    private val domain = "l2suv669dc.execute-api.us-east-1.amazonaws.com"
     private val getPlantInfoPath = "/dev/plants/information"
     private val getPlantTypePath = "/dev/plants/type"
     private val getTranslationPath = "/translate"
@@ -21,7 +21,7 @@ class PlantService {
 
     /** Currently using mock API endpoints, will change later **/
 
-    suspend fun GetPlantInformation(plant_name : String) : Deferred<String> = CoroutineScope(IO).async{
+    suspend fun GetPlantInformation(plant_name : String) : String {
 
         val uriPath = "$protocol$domain$getPlantInfoPath?name=$plant_name"
         val request = Request.Builder().url(uriPath).build()
@@ -30,20 +30,17 @@ class PlantService {
 
         Log.d("Getting plant information from", uriPath)
 
-        client.newCall(request).enqueue(object : Callback {
-            override fun onResponse(call: Call, response: Response) {
-                plantInfo = JSONObject(response.body.string()).getString("message").toString()
-                Log.d("PlantInfoReply", plantInfo)
+        val response = client.newCall(request).execute()
 
-            }
+        if (response.isSuccessful) {
+            plantInfo = JSONObject(response.body.string()).getString("message").toString()
+            Log.d("PlantInfoReply", plantInfo)
+        } else {
+            Log.d("PlantInfoRetrievalError", response.message)
+            plantInfo = "RetrievalError"
+        }
 
-            override fun onFailure(call: Call, e: IOException) {
-                Log.d("PlantInfoRetrievalError", e.toString())
-                plantInfo = "RetrievalError"
-            }
-        })
-
-        return@async plantInfo
+        return plantInfo
     }
 
     suspend fun GetPlantType(plant_image_in_bytes : ByteArray) : Deferred<String> = CoroutineScope(IO).async {
