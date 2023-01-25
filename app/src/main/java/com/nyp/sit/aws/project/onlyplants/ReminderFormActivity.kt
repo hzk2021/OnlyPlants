@@ -4,8 +4,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import kotlinx.android.synthetic.main.fragment_dialog_reminder_days.*
 
 class ReminderFormActivity : AppCompatActivity() {
+
+    var selectedHour: Int? = null
+    var selectedMin: Int? = null
+    var selectedDays: String? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reminder_form)

@@ -23,49 +23,56 @@
             android:id="@+id/monCB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/monday">
+            android:text="@string/monday"
+            android:tag="MON">
         </CheckBox>
 
         <CheckBox
             android:id="@+id/tueCB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/tuesday">
+            android:text="@string/tuesday"
+            android:tag="TUE">
         </CheckBox>
 
         <CheckBox
             android:id="@+id/wedCB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/wednesday">
+            android:text="@string/wednesday"
+            android:tag="WED">
         </CheckBox>
 
         <CheckBox
             android:id="@+id/thuCB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/thursday">
+            android:text="@string/thursday"
+            android:tag="THU">
         </CheckBox>
 
         <CheckBox
             android:id="@+id/friCB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/friday">
+            android:text="@string/friday"
+            android:tag="FRI">
         </CheckBox>
 
         <CheckBox
             android:id="@+id/satCB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/saturday">
+            android:text="@string/saturday"
+            android:tag="SAT">
         </CheckBox>
 
         <CheckBox
             android:id="@+id/sunCB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/sunday">
+            android:text="@string/sunday"
+            android:tag="SUN">
         </CheckBox>
 
     </LinearLayout>
