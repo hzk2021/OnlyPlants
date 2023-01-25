@@ -12,19 +12,44 @@
         android:textSize="25sp">
     </TextView>
 
+    <RadioGroup
+        android:id="@+id/radioGrp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp">
+
+        <RadioButton
+            android:id="@+id/everydayRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Everyday"
+            android:tag="*">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/customRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Custom">
+        </RadioButton>
+
+    </RadioGroup>
+
+
     <LinearLayout
         android:id="@+id/CBgroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginStart="20dp">
+        android:layout_marginStart="40dp">
 
         <CheckBox
             android:id="@+id/monCB"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/monday"
-            android:tag="MON">
+            android:tag="MON"
+            android:enabled="false">
         </CheckBox>
 
         <CheckBox
@@ -32,7 +57,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/tuesday"
-            android:tag="TUE">
+            android:tag="TUE"
+            android:enabled="false">
         </CheckBox>
 
         <CheckBox
@@ -40,7 +66,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/wednesday"
-            android:tag="WED">
+            android:tag="WED"
+            android:enabled="false">
         </CheckBox>
 
         <CheckBox
@@ -48,7 +75,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/thursday"
-            android:tag="THU">
+            android:tag="THU"
+            android:enabled="false">
         </CheckBox>
 
         <CheckBox
@@ -56,7 +84,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/friday"
-            android:tag="FRI">
+            android:tag="FRI"
+            android:enabled="false">
         </CheckBox>
 
         <CheckBox
@@ -64,7 +93,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/saturday"
-            android:tag="SAT">
+            android:tag="SAT"
+            android:enabled="false">
         </CheckBox>
 
         <CheckBox
@@ -72,10 +102,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sunday"
-            android:tag="SUN">
+            android:tag="SUN"
+            android:enabled="false">
         </CheckBox>
 
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/errorMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/design_default_color_error"
+        android:layout_marginStart="20dp"
+        android:visibility="gone">
+    </TextView>
 
     <LinearLayout
         android:layout_width="wrap_content"
