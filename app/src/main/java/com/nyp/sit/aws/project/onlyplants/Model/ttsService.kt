@@ -13,10 +13,10 @@ class ttsService {
     // Initialize client and url paths
     private val client = OkHttpClient()
     private val protocol = "https://"
-    private val ttsDomain = "zo7awrj5hb.execute-api.us-east-1.amazonaws.com"
+    private val ttsDomain = "0h3qii72ok.execute-api.us-east-1.amazonaws.com"
     private val getTTSPath = "/test/converttoaudio"
 
-    private val raDomain = "z5h0vp4o4g.execute-api.us-east-1.amazonaws.com"
+    private val raDomain = "trom13phtk.execute-api.us-east-1.amazonaws.com"
     private val getRaPath = "/test/retrieveaudio"
 
     // Function to convert text to audio
@@ -81,6 +81,8 @@ class ttsService {
             val response = client.newCall(request).execute()
             if (response.isSuccessful) {
                 Log.d("responseMsg", "retrieve successful")
+
+                // Code for nullarray
 
                 // Decode response
                 decodedBody = getDecoder().decode(response.body.string())
