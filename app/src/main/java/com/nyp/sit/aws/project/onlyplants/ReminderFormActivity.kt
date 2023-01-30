@@ -20,25 +20,13 @@ class ReminderFormActivity : AppCompatActivity() {
 
     // Variables to display time
     private var displayHour: Int? = null
+    private var displayMin: String? = null
     private var displayTime: String? = null
     private var displayDays: String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reminder_form)
-
-        // Get device token
-        FirebaseMessaging.getInstance().token
-            .addOnCompleteListener(OnCompleteListener { task ->
-                if (!task.isSuccessful) {
-                    Log.w("token", "Fetching FCM registration token failed", task.exception)
-                    return@OnCompleteListener
-                }
-
-                val token = task.result
-
-                Log.d("token", token)
-            })
 
         // Set time and days information
         refreshDisplay()
@@ -114,6 +102,21 @@ class ReminderFormActivity : AppCompatActivity() {
         }
     }
 
+    // Function to display minutes
+    private fun convertMinutes() {
+        if (selectedMin == null) {
+            displayTime = "Not selected"
+        }
+        else {
+            if (selectedMin!! < 10) {
+                displayMin = "0$selectedMin"
+            }
+            else {
+                displayMin = selectedMin.toString()
+            }
+        }
+    }
+
     // Function to display days
     private fun listDaysinString() {
         if (selectedDays == null) {
@@ -130,15 +133,16 @@ class ReminderFormActivity : AppCompatActivity() {
     // Function to update the TextViews displaying time and days
     fun refreshDisplay() {
         convertTimeDisplay()
+        convertMinutes()
         listDaysinString()
 
         var timeExp: String? = ""
 
-        if (displayHour == null && selectedMin == null) {
+        if (displayHour == null && displayMin == null) {
             timeExp = displayTime
         }
         else {
-            timeExp = "$displayHour:$selectedMin $displayTime"
+            timeExp = "$displayHour:$displayMin $displayTime"
         }
 
 

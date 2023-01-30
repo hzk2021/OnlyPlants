@@ -33,7 +33,8 @@ class myFirebaseMessagingService: FirebaseMessagingService() {
     }
 
     private fun sendNotification(title: String?, msg: String?) {
-        val intent = Intent(this,ReminderFormActivity::class.java)
+        // Intent to open watered plant page (note)
+        val intent = Intent(this, ReminderFormActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
 
@@ -58,6 +59,5 @@ class myFirebaseMessagingService: FirebaseMessagingService() {
     }
 
     notificationManager.notify(0, notificationBuilder.build())
-
     }
 }

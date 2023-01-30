@@ -1,6 +1,8 @@
 package com.nyp.sit.aws.project.onlyplants.Model
 
 import android.util.Log
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 import com.nyp.sit.aws.project.onlyplants.ReminderFormActivity
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
@@ -21,6 +23,7 @@ class reminderService {
 
         val json = JSONObject()
         json.put("cronExp", cronExp)
+        json.put("deviceToken", getDeviceToken())
 
         val body = json.toString().toRequestBody(("application/json").toMediaType())
 
@@ -49,5 +52,25 @@ class reminderService {
         }
 
         return
+    }
+
+    // Function to get device token
+    fun getDeviceToken(): String {
+
+        var token = ""
+
+        FirebaseMessaging.getInstance().token
+            .addOnCompleteListener(OnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    Log.w("token", "Fetching FCM registration token failed", task.exception)
+                    return@OnCompleteListener
+                }
+
+                token = task.result
+
+                Log.d("token", token)
+            })
+
+        return token
     }
 }
