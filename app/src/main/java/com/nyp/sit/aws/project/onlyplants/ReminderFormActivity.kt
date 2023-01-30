@@ -2,9 +2,12 @@ package com.nyp.sit.aws.project.onlyplants
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.ArrayAdapter
 import android.widget.ListView
 import android.widget.Toast
+import com.google.android.gms.tasks.OnCompleteListener
+import com.google.firebase.messaging.FirebaseMessaging
 import com.nyp.sit.aws.project.onlyplants.Model.reminderService
 import kotlinx.android.synthetic.main.activity_reminder_form.*
 import kotlinx.coroutines.*
@@ -23,6 +26,19 @@ class ReminderFormActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_reminder_form)
+
+        // Get device token
+        FirebaseMessaging.getInstance().token
+            .addOnCompleteListener(OnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    Log.w("token", "Fetching FCM registration token failed", task.exception)
+                    return@OnCompleteListener
+                }
+
+                val token = task.result
+
+                Log.d("token", token)
+            })
 
         // Set time and days information
         refreshDisplay()
