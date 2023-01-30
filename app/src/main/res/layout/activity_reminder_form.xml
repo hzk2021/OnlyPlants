@@ -12,8 +12,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="100sp"
         android:gravity="center"
-        android:text="Reminder sent at"
-        android:textSize="20sp"></TextView>
+        android:text="@string/reminder_sent_at"
+        android:textSize="20sp">
+    </TextView>
 
     <TextView
         android:id="@+id/showTimeTV"
@@ -21,9 +22,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="10sp"
         android:gravity="center"
-        android:text="9:00 AM"
         android:textColor="#000000"
-        android:textSize="50sp"></TextView>
+        android:textSize="50sp">
+    </TextView>
 
     <TextView
         android:id="@+id/showDaysTV"
@@ -31,17 +32,18 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="100sp"
         android:gravity="center"
-        android:text="Every Mon, Thu, Sat"
         android:textColor="#000000"
-        android:textSize="24sp"></TextView>
+        android:textSize="24sp">
+    </TextView>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="15sp"
         android:layout_marginBottom="10sp"
-        android:text="Edit reminder settings"
-        android:textSize="20sp"></TextView>
+        android:text="@string/edit_reminder_settings"
+        android:textSize="20sp">
+    </TextView>
 
     <ListView
         android:id="@+id/reminderForm"
@@ -49,5 +51,29 @@
         android:layout_height="wrap_content">
     </ListView>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/mainBackBtn"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="@color/design_default_color_error"
+            android:text="@string/back">
+        </Button>
+
+        <Button
+            android:id="@+id/mainSaveBtn"
+            android:layout_width="0sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/saveBtn">
+        </Button>
+
+    </LinearLayout>
 
 </LinearLayout>

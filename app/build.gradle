@@ -50,5 +50,5 @@ dependencies {
     implementation("aws.sdk.kotlin:s3:0.16.0")
     implementation("aws.sdk.kotlin:lambda:0.16.0")
     implementation("aws.sdk.kotlin:rekognition:0.16.0")
-
+    implementation 'com.squareup.okhttp3:okhttp:3.8.1'
 }

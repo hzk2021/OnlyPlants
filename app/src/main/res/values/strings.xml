@@ -13,4 +13,7 @@
     <string name="friday">Friday</string>
     <string name="saturday">Saturday</string>
     <string name="sunday">Sunday</string>
+    <string name="edit_reminder_settings">Edit reminder settings</string>
+    <string name="back">Back</string>
+    <string name="reminder_sent_at">Reminder sent at</string>
 </resources>

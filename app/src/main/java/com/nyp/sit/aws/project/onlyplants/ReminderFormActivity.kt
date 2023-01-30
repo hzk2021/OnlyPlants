@@ -4,8 +4,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.ListView
+import android.widget.Toast
+import com.nyp.sit.aws.project.onlyplants.Model.reminderService
 import kotlinx.android.synthetic.main.activity_reminder_form.*
-import kotlinx.android.synthetic.main.fragment_dialog_reminder_days.*
+import kotlinx.coroutines.*
 
 class ReminderFormActivity : AppCompatActivity() {
 
@@ -33,24 +35,40 @@ class ReminderFormActivity : AppCompatActivity() {
         )
 
         // access the listView from xml file
-        var listView = findViewById<ListView>(R.id.reminderForm)
+        val listView = findViewById<ListView>(R.id.reminderForm)
         arrayAdapter = ArrayAdapter(this,
             android.R.layout.simple_list_item_1,
             options)
         listView.adapter = arrayAdapter
 
         // Set list item to open fragment on click
-        listView.setOnItemClickListener { parent, view, position, id ->
+        listView.setOnItemClickListener { _, _, position, _ ->
             if (position == 0) {
-                var timeDialogFragment = ReminderTimeDialogFragment()
+                val timeDialogFragment = ReminderTimeDialogFragment()
 
                 timeDialogFragment.show(supportFragmentManager, "timeDialogFragment")
             }
 
             if (position == 1) {
-                var daysDialogFragment = ReminderDaysDialogFragment()
+                val daysDialogFragment = ReminderDaysDialogFragment()
 
                 daysDialogFragment.show(supportFragmentManager, "daysDialogFragment")
+            }
+        }
+
+        // Back Button
+//        mainBackBtn.setOnClickListener {
+//
+//        }
+
+        // Save Button
+        mainSaveBtn.setOnClickListener {
+            if (selectedHour == null || selectedMin == null || selectedDays == null) {
+                Toast.makeText(this, "No time/day has been selected", Toast.LENGTH_SHORT).show()
+            }
+            else {
+                createReminderRule()
+                Toast.makeText(this, "Creating reminder", Toast.LENGTH_SHORT).show()
             }
         }
     }
@@ -113,7 +131,17 @@ class ReminderFormActivity : AppCompatActivity() {
     }
 
     // Function to create cron expression for Eventbridge rule
-    fun createCronExp(): String {
+    private fun createCronExp(): String {
         return "cron($selectedMin $selectedHour ? * $selectedDays *)"
+    }
+
+    // Function to call createReminderRule API
+    private fun createReminderRule() {
+        val cronExp = createCronExp()
+
+        val scope = CoroutineScope(Job() + Dispatchers.IO)
+        val singleJobItem = scope.async(Dispatchers.IO) { reminderService().createReminderRule(cronExp) }
+
+        scope.launch { singleJobItem.await() }
     }
 }
