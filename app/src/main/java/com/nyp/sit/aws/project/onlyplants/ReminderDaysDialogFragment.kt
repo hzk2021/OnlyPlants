@@ -1,6 +1,8 @@
 package com.nyp.sit.aws.project.onlyplants
 
+import android.content.DialogInterface
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +25,10 @@ class ReminderDaysDialogFragment: DialogFragment() {
             container,
             false)
 
+        // Assign value to variables in activity
+        val activity: ReminderFormActivity  = activity as ReminderFormActivity
+//        Log.d("test","days saved: " + activity.selectedDays)
+
         rootView.radioGrp.setOnCheckedChangeListener { radioGroup, i ->
             val daysCB: Array<CheckBox> = arrayOf(sunCB, monCB, tueCB,
                 wedCB , thuCB , friCB , satCB)
@@ -43,19 +49,30 @@ class ReminderDaysDialogFragment: DialogFragment() {
             var selectedDays = ""
 
             if (everydayRB.isChecked) {
-                selectedDays += "*"
+                selectedDays = "*"
             }
 
             else if (customRB.isChecked){
+
+                // Variable used to count number of days selected
+                var checkDaysSelect = 0
+
                 for (day in daysCB){
                     if (day.isChecked){
                         selectedDays += day.tag
                         selectedDays += ","
+                        checkDaysSelect += 1
                     }
                 }
 
-                // Remove comma at the end
-                selectedDays = selectedDays.dropLast(1)
+                // If user selects all days, set as everyday selected
+                if (checkDaysSelect > 6) {
+                    selectedDays = "*"
+                }
+                else {
+                    // Remove comma at the end
+                    selectedDays = selectedDays.dropLast(1)
+                }
             }
 
             // Check if no option was checked/string is empty
@@ -68,14 +85,25 @@ class ReminderDaysDialogFragment: DialogFragment() {
                 removeError()
 
                 // Assign value to variable in activity
-                val activity: ReminderFormActivity  = activity as ReminderFormActivity
                 activity.selectedDays = selectedDays
 
                 dismiss()
             }
         }
 
+        // Set time and days information
+        activity.refreshDisplay()
+
         return rootView
+    }
+
+    override fun onDismiss(dialog: DialogInterface) {
+
+        // Set time and days information
+        val activity: ReminderFormActivity  = activity as ReminderFormActivity
+        activity.refreshDisplay()
+
+        super.onDismiss(dialog)
     }
 
     // Function to enable/disable checkboxes based on radio button selection

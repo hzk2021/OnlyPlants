@@ -1,6 +1,8 @@
 package com.nyp.sit.aws.project.onlyplants
 
+import android.content.DialogInterface
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,14 +21,16 @@ class ReminderTimeDialogFragment: DialogFragment() {
             container,
             false)
 
+        // Assign value to variables in activity
+        val activity: ReminderFormActivity  = activity as ReminderFormActivity
+
+        Log.d("test","time saved: " + activity.selectedHour + ":" + activity.selectedMin)
+
         rootView.cancelBtn.setOnClickListener {
             dismiss()
         }
 
         rootView.saveBtn.setOnClickListener {
-
-            // Assign value to variables in activity
-            val activity: ReminderFormActivity  = activity as ReminderFormActivity
             activity.selectedHour = reminderTime.hour
             activity.selectedMin = reminderTime.minute
             dismiss()
@@ -35,4 +39,12 @@ class ReminderTimeDialogFragment: DialogFragment() {
         return rootView
     }
 
+    override fun onDismiss(dialog: DialogInterface) {
+
+        // Set time and days information
+        val activity: ReminderFormActivity  = activity as ReminderFormActivity
+        activity.refreshDisplay()
+
+        super.onDismiss(dialog)
+    }
 }
