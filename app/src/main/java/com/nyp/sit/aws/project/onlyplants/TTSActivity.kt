@@ -34,7 +34,7 @@ class TTSActivity : AppCompatActivity() {
 
     fun prepareAudio() {
         val scope = CoroutineScope(Job() + Dispatchers.IO)
-        val singleJobItem = scope.async(Dispatchers.IO) { ttsService().retrieveAudio("Roses") }
+        val singleJobItem = scope.async(Dispatchers.IO) { ttsService().retrieveAudio("Rose") }
 
         scope.launch {
             val decodedBody = singleJobItem.await()
