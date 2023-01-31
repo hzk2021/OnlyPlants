@@ -55,7 +55,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="bottom"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@android:color/transparent">
 
         <Button
             android:id="@+id/mainBackBtn"
@@ -71,6 +72,7 @@
             android:layout_width="0sp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:background="@color/design_default_color_primary"
             android:text="@string/saveBtn">
         </Button>
 
