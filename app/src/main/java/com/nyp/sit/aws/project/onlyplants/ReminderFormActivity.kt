@@ -152,7 +152,7 @@ class ReminderFormActivity : AppCompatActivity() {
 
     // Function to create cron expression for Eventbridge rule
     private fun createCronExp(): String {
-        return "cron($selectedMin $selectedHour ? * $selectedDays *)"
+        return "cron($displayMin $selectedHour ? * $selectedDays *)"
     }
 
     // Function to call createReminderRule API
@@ -160,7 +160,7 @@ class ReminderFormActivity : AppCompatActivity() {
         val cronExp = createCronExp()
 
         val scope = CoroutineScope(Job() + Dispatchers.IO)
-        val singleJobItem = scope.async(Dispatchers.IO) { reminderService().createReminderRule(cronExp) }
+        val singleJobItem = scope.async(Dispatchers.IO) { reminderService().createReminder(cronExp) }
 
         scope.launch { singleJobItem.await() }
     }

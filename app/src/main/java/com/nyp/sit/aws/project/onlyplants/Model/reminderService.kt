@@ -1,9 +1,11 @@
 package com.nyp.sit.aws.project.onlyplants.Model
 
+import android.provider.Settings.Global.getString
 import android.util.Log
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import com.nyp.sit.aws.project.onlyplants.ReminderFormActivity
+import kotlinx.coroutines.*
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.OkHttpClient
 import okhttp3.Request
@@ -19,11 +21,11 @@ class reminderService {
     private val getReminderPath = "/test/createreminderevent"
 
     // Function to create Eventbridge rule
-    fun createReminderRule(cronExp: String) {
+    private fun createReminderRule(cronExp: String, deviceToken: String) {
 
         val json = JSONObject()
         json.put("cronExp", cronExp)
-        json.put("deviceToken", getDeviceToken())
+        json.put("deviceToken", deviceToken)
 
         val body = json.toString().toRequestBody(("application/json").toMediaType())
 
@@ -40,8 +42,11 @@ class reminderService {
             val response = client.newCall(request).execute()
             if (response.isSuccessful) {
                 Log.d("responseMsg", "create rule successful")
-            }
-            else {
+
+                // Sometimes error but returned as success (status code 200)
+                val errorMsg = response.body?.string() ?: "none"
+                println("error: $errorMsg")
+            } else {
                 Log.d("responseMsg", "create rule failed")
                 Log.d("responsefullMsg", response.code.toString())
                 Log.d("responsefullMsg", response.body.toString())
@@ -50,6 +55,34 @@ class reminderService {
             Log.d("responseMsg", "code failed")
             e.printStackTrace()
         }
+
+        return
+    }
+
+    // Function to get device token and create reminder rule
+    fun createReminder(cronExp: String) {
+
+        var token = ""
+
+        // Function is async, must wait for deviceToken to be
+        // retrieved before creating eventbridge rule
+        FirebaseMessaging.getInstance().token
+            .addOnCompleteListener(OnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    Log.w("token", "Fetching FCM registration token failed", task.exception)
+                    return@OnCompleteListener
+                }
+
+                token = task.result
+
+                // Print device token
+                Log.d("token on success", token)
+
+                // Create eventbridge rule
+                val scope = CoroutineScope(Job() + Dispatchers.IO)
+                val singleJobItem = scope.async(Dispatchers.IO) { createReminderRule(cronExp, token) }
+                scope.launch { singleJobItem.await() }
+            })
 
         return
     }
@@ -68,7 +101,7 @@ class reminderService {
 
                 token = task.result
 
-                Log.d("token", token)
+                Log.d("token on success", token)
             })
 
         return token

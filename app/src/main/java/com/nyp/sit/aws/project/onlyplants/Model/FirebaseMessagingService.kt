@@ -9,6 +9,7 @@ import android.media.RingtoneManager
 import android.os.Build
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import android.widget.Toast
 import androidx.core.app.NotificationCompat
 import com.google.firebase.messaging.FirebaseMessagingService
@@ -19,14 +20,15 @@ import com.nyp.sit.aws.project.onlyplants.ReminderFormActivity
 
 class myFirebaseMessagingService: FirebaseMessagingService() {
 
+    //
     override fun onMessageReceived(message: RemoteMessage) {
         super.onMessageReceived(message)
 
-        // Retrieve and extract message
+        // If user is in application, and notification is received
+        // Create the notification message
         if (message.notification != null) {
-            val data = message.data
-            val title = data["title"]
-            val msg = data["message"]
+            val title = "Water Reminder"
+            val msg = "Remember to water your plants!"
 
             sendNotification(title, msg)
         }
@@ -34,10 +36,11 @@ class myFirebaseMessagingService: FirebaseMessagingService() {
 
     private fun sendNotification(title: String?, msg: String?) {
         // Intent to open watered plant page (note)
-        val intent = Intent(this, ReminderFormActivity::class.java)
+        val intent = Intent(this, MainActivity::class.java)
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
         val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_ONE_SHOT)
 
+        // Create notification
         val channelID = "notification_channel"
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val notificationBuilder = NotificationCompat.Builder(this, channelID)
@@ -50,10 +53,10 @@ class myFirebaseMessagingService: FirebaseMessagingService() {
 
     val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
-    // Since android Oreo notification channel is needed.
+    // Register channel with the system
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
         val channel = NotificationChannel(channelID,
-            "Channel human readable title",
+            "Water Reminder",
             NotificationManager.IMPORTANCE_DEFAULT)
         notificationManager.createNotificationChannel(channel)
     }
