@@ -3,11 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+<<<<<<< Updated upstream
         <entry key="..\:/Users/yipdi/OneDrive/Documents/GitHub/ECP/OnlyPlants/app/src/main/res/drawable/ic_launcher_background.xml" value="0.25052083333333336" />
         <entry key="..\:/Users/yipdi/OneDrive/Documents/GitHub/ECP/OnlyPlants/app/src/main/res/layout/activity_add_post.xml" value="0.1" />
         <entry key="..\:/Users/yipdi/OneDrive/Documents/GitHub/ECP/OnlyPlants/app/src/main/res/layout/activity_camera.xml" value="0.234375" />
         <entry key="..\:/Users/yipdi/OneDrive/Documents/GitHub/ECP/OnlyPlants/app/src/main/res/layout/activity_home.xml" value="0.234375" />
         <entry key="..\:/Users/yipdi/OneDrive/Documents/GitHub/ECP/OnlyPlants/app/src/main/res/layout/activity_main.xml" value="0.1" />
+=======
+        <entry key="..\:/Users/yipdi/Downloads/OnlyPlants/app/src/main/res/layout/activity_add_post.xml" value="0.24635416666666668" />
+        <entry key="..\:/Users/yipdi/Downloads/OnlyPlants/app/src/main/res/layout/activity_home.xml" value="0.25" />
+        <entry key="..\:/Users/yipdi/Downloads/OnlyPlants/app/src/main/res/layout/activity_post.xml" value="0.176" />
+        <entry key="..\:/Users/yipdi/OneDrive/Documents/GitHub/ECP/OnlyPlants/app/src/main/res/drawable/test.xml" value="0.1" />
+        <entry key="..\:/Users/yipdi/OneDrive/Documents/GitHub/ECP/OnlyPlants/app/src/main/res/layout/activity_add_post.xml" value="0.264" />
+        <entry key="..\:/Users/yipdi/OneDrive/Documents/GitHub/ECP/OnlyPlants/app/src/main/res/layout/activity_home.xml" value="0.1" />
+        <entry key="..\:/Users/yipdi/OneDrive/Documents/GitHub/ECP/OnlyPlants/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/yipdi/OneDrive/Documents/GitHub/ECP/OnlyPlants/app/src/main/res/layout/activity_post.xml" value="0.1" />
+        <entry key="..\:/Users/yipdi/OneDrive/Documents/GitHub/ECP/OnlyPlants/app/src/main/res/menu/bottom_navigation_menu.xml" value="0.1" />
+>>>>>>> Stashed changes
       </map>
     </option>
   </component>

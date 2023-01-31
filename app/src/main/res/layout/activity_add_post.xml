@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Add_Post">
+    tools:context=".AddPost">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
@@ -76,7 +76,7 @@
             />
 
         <EditText
-            android:id="@+id/write_post"
+            android:id="@+id/write_caption"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="5dp"

@@ -41,6 +41,8 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha03'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     // Coroutine/Async
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
@@ -52,6 +54,7 @@ dependencies {
     implementation("aws.sdk.kotlin:rekognition:0.17.0-beta")
     implementation("aws.sdk.kotlin:translate:0.17.0-beta")
     implementation("aws.sdk.kotlin:dynamodb:0.17.0-beta")
+
 
     // Added for location services:
     implementation 'org.maplibre.gl:android-sdk:9.5.2'
