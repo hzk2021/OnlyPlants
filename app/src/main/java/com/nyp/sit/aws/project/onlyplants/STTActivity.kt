@@ -1,12 +1,16 @@
 package com.nyp.sit.aws.project.onlyplants
 
 import android.Manifest
+import android.app.Activity
+import android.content.ActivityNotFoundException
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.media.MediaPlayer
 import android.media.MediaRecorder
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Environment
+import android.speech.RecognizerIntent
 import android.view.View
 import android.widget.ImageButton
 import android.widget.Toast
@@ -15,6 +19,7 @@ import androidx.core.content.ContextCompat
 import com.nyp.sit.aws.project.onlyplants.Model.sttService
 import kotlinx.android.synthetic.main.activity_sttactivity.*
 import java.io.File
+import java.util.*
 
 class STTActivity : AppCompatActivity() {
 
@@ -30,9 +35,10 @@ class STTActivity : AppCompatActivity() {
         STT = sttService(applicationContext, applicationContext.cacheDir)
 
         micBtn.setOnClickListener {
-            val dialog = STTDialogFragment()
-
-            dialog.show(supportFragmentManager, "sttDialogFragment")
+            transcribe()
+//            val dialog = STTDialogFragment()
+//
+//            dialog.show(supportFragmentManager, "sttDialogFragment")
         }
 
         audioSetup()
@@ -99,4 +105,33 @@ class STTActivity : AppCompatActivity() {
         }
     }
 
+    // Function to convert speech to text
+    fun transcribe() {
+        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault());
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speech to text")
+
+//        val activity: STTActivity = activity as STTActivity
+
+        try
+        {
+            startActivityForResult(intent, 10)
+        }
+        catch (ex: Exception)
+        {
+            Toast.makeText(this,"Your Device Doesn't Support It", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        when (requestCode) {
+            10 -> if (resultCode == Activity.RESULT_OK && data != null) {
+                val result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
+                searchString.setText(result!![0])
+            }
+        }
+    }
 }

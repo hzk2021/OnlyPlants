@@ -22,21 +22,21 @@ class STTDialogFragment: DialogFragment() {
 
         val rootView: View = inflater.inflate(R.layout.fragment_dialog_stt, container, false)
 
-        mediaRecorder = MediaRecorder()
-
-        val STT = sttService(requireContext(), requireContext().cacheDir)
-
-        STT.recordAudio(requireActivity().micBtn, mediaRecorder)
+//        mediaRecorder = MediaRecorder()
+//
+//        val STT = sttService(requireContext(), requireContext().cacheDir)
+//
+//        STT.recordAudio(requireActivity().micBtn, mediaRecorder)
 
         rootView.stopBtn.setOnClickListener {
-            STT.stopAudio(requireActivity().micBtn, mediaRecorder)
-            mediaRecorder = null
+//            STT.stopAudio(requireActivity().micBtn, mediaRecorder)
+//            mediaRecorder = null
             dismiss()
         }
 
         rootView.searchStrBtn.setOnClickListener {
-            STT.stopAudio(requireActivity().micBtn, mediaRecorder)
-            mediaRecorder = null
+//            STT.stopAudio(requireActivity().micBtn, mediaRecorder)
+//            mediaRecorder = null
             // trigger lambda
             dismiss()
         }
