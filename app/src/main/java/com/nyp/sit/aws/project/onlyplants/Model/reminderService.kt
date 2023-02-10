@@ -11,14 +11,22 @@ import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.RequestBody.Companion.toRequestBody
 import org.json.JSONObject
+import kotlinx.serialization.*
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.json.JsonDecoder
+import kotlinx.serialization.json.buildJsonArray
+import org.json.JSONArray
 
 class reminderService {
 
     // Initialize client and url paths
     private val client = OkHttpClient()
     private val protocol = "https://"
-    private val reminderDomain = "d2i8w9vs9g.execute-api.us-east-1.amazonaws.com"
-    private val getReminderPath = "/test/createreminderevent"
+    private val createReminderDomain = "d2i8w9vs9g.execute-api.us-east-1.amazonaws.com"
+    private val createReminderPath = "/test/createreminderevent"
+
+    private val getReminderDomain = "nmwcsprxwk.execute-api.us-east-1.amazonaws.com"
+    private val getReminderPath = "/test/getreminders"
 
     // Function to create Eventbridge rule
     private fun createReminderRule(cronExp: String, deviceToken: String) {
@@ -30,7 +38,7 @@ class reminderService {
         val body = json.toString().toRequestBody(("application/json").toMediaType())
 
         // Build request path
-        val uriPath = "$protocol$reminderDomain$getReminderPath"
+        val uriPath = "$protocol$createReminderDomain$createReminderPath"
         val request = Request.Builder()
             .url(uriPath)
             .post(body)
@@ -82,6 +90,83 @@ class reminderService {
                 val scope = CoroutineScope(Job() + Dispatchers.IO)
                 val singleJobItem = scope.async(Dispatchers.IO) { createReminderRule(cronExp, token) }
                 scope.launch { singleJobItem.await() }
+            })
+
+        return
+    }
+
+    // Function to get device token and retrieve reminder rules set by this device
+    private fun getReminderRules(deviceToken: String): List<ReminderRule>? {
+
+        var returnResp = null
+
+        val json = JSONObject()
+        json.put("deviceToken", deviceToken)
+
+        val body = json.toString().toRequestBody(("application/json").toMediaType())
+
+        // Build request path
+        val uriPath = "$protocol$getReminderDomain$getReminderPath"
+        val request = Request.Builder()
+            .url(uriPath)
+            .post(body)
+            .build()
+
+        Log.d("responseMsg", "Retrieving Eventbridge rules at $uriPath")
+
+        try {
+            val response = client.newCall(request).execute()
+            if (response.isSuccessful) {
+                Log.d("responseMsg", "retrieve rules successful")
+
+                // Convert JSON List to Kotlin
+                val jsonResponse = response.body?.string()
+                println("Output: $jsonResponse")
+
+                if (!jsonResponse.isNullOrBlank() && jsonResponse != "false") {
+                    val jsonList = Json.decodeFromString<List<ReminderRule>>(jsonResponse)
+                    println("Output: $jsonList")
+
+                    return jsonList
+                }
+
+            } else {
+                Log.d("responseMsg", "retrieve rules failed")
+                Log.d("responsefullMsg", response.code.toString())
+                Log.d("responsefullMsg", response.body.toString())
+            }
+        } catch (e: Exception) {
+            Log.d("responseMsg", "code failed")
+            e.printStackTrace()
+        }
+
+        return null
+    }
+
+    // Function to get device token and retrieve reminder rules set by this device
+    fun getReminders() {
+
+        var token = ""
+
+        FirebaseMessaging.getInstance().token
+            .addOnCompleteListener(OnCompleteListener { task ->
+                if (!task.isSuccessful) {
+                    Log.w("token", "Fetching FCM registration token failed", task.exception)
+                    return@OnCompleteListener
+                }
+
+                token = task.result
+
+                Log.d("token on success", token)
+
+                // Get reminder rules created from this device
+                val scope = CoroutineScope(Job() + Dispatchers.IO)
+                val singleJobItem = scope.async(Dispatchers.IO) { getReminderRules(token) }
+                scope.launch {
+                    val getRuleResp = singleJobItem.await()
+                    Log.d("retrieve rules", getRuleResp.toString())
+                }
+
             })
 
         return
