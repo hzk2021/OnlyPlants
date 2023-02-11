@@ -29,7 +29,7 @@ class reminderService {
     private val getReminderPath = "/test/getreminders"
 
     // Function to create Eventbridge rule
-    private fun createReminderRule(cronExp: String, deviceToken: String) {
+    fun createReminderRule(cronExp: String, deviceToken: String) {
 
         val json = JSONObject()
         json.put("cronExp", cronExp)
@@ -67,38 +67,8 @@ class reminderService {
         return
     }
 
-    // Function to get device token and create reminder rule
-    fun createReminder(cronExp: String) {
-
-        var token = ""
-
-        // Function is async, must wait for deviceToken to be
-        // retrieved before creating eventbridge rule
-        FirebaseMessaging.getInstance().token
-            .addOnCompleteListener(OnCompleteListener { task ->
-                if (!task.isSuccessful) {
-                    Log.w("token", "Fetching FCM registration token failed", task.exception)
-                    return@OnCompleteListener
-                }
-
-                token = task.result
-
-                // Print device token
-                Log.d("token on success", token)
-
-                // Create eventbridge rule
-                val scope = CoroutineScope(Job() + Dispatchers.IO)
-                val singleJobItem = scope.async(Dispatchers.IO) { createReminderRule(cronExp, token) }
-                scope.launch { singleJobItem.await() }
-            })
-
-        return
-    }
-
     // Function to get device token and retrieve reminder rules set by this device
-    private fun getReminderRules(deviceToken: String): List<ReminderRule>? {
-
-        var returnResp = null
+    fun getReminderRules(deviceToken: String): Array<ReminderRule>? {
 
         val json = JSONObject()
         json.put("deviceToken", deviceToken)
@@ -124,7 +94,7 @@ class reminderService {
                 println("Output: $jsonResponse")
 
                 if (!jsonResponse.isNullOrBlank() && jsonResponse != "false") {
-                    val jsonList = Json.decodeFromString<List<ReminderRule>>(jsonResponse)
+                    val jsonList = Json.decodeFromString<Array<ReminderRule>>(jsonResponse)
                     println("Output: $jsonList")
 
                     return jsonList
@@ -141,35 +111,6 @@ class reminderService {
         }
 
         return null
-    }
-
-    // Function to get device token and retrieve reminder rules set by this device
-    fun getReminders() {
-
-        var token = ""
-
-        FirebaseMessaging.getInstance().token
-            .addOnCompleteListener(OnCompleteListener { task ->
-                if (!task.isSuccessful) {
-                    Log.w("token", "Fetching FCM registration token failed", task.exception)
-                    return@OnCompleteListener
-                }
-
-                token = task.result
-
-                Log.d("token on success", token)
-
-                // Get reminder rules created from this device
-                val scope = CoroutineScope(Job() + Dispatchers.IO)
-                val singleJobItem = scope.async(Dispatchers.IO) { getReminderRules(token) }
-                scope.launch {
-                    val getRuleResp = singleJobItem.await()
-                    Log.d("retrieve rules", getRuleResp.toString())
-                }
-
-            })
-
-        return
     }
 
     // Function to get device token

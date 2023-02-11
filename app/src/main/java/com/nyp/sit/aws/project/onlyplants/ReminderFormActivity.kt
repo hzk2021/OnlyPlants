@@ -1,5 +1,7 @@
 package com.nyp.sit.aws.project.onlyplants
 
+import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -61,18 +63,53 @@ class ReminderFormActivity : AppCompatActivity() {
         }
 
         // Back Button
-//        mainBackBtn.setOnClickListener {
-//
-//        }
+        mainBackBtn.setOnClickListener {
+            val intent = Intent(this, ListRemindersActivity::class.java)
+            startActivity(intent)
+        }
 
         // Save Button
         mainSaveBtn.setOnClickListener {
             if (selectedHour == null || selectedMin == null || selectedDays == null) {
-                Toast.makeText(this, "No time/day has been selected", Toast.LENGTH_SHORT).show()
+                displayToast("No time/day has been selected")
             }
             else {
-                createReminderRule()
-                Toast.makeText(this, "Creating reminder", Toast.LENGTH_SHORT).show()
+                mainSaveBtn.isEnabled = false
+                mainBackBtn.isEnabled = false
+                mainBackBtn.setBackgroundColor(Color.LTGRAY)
+                loadOverlay()
+
+
+                // Function is async, must wait for deviceToken to be
+                // retrieved before creating eventbridge rule
+                FirebaseMessaging.getInstance().token
+                    .addOnCompleteListener(OnCompleteListener { task ->
+
+                        if (!task.isSuccessful) {
+                            Log.w("token", "Fetching FCM registration token failed", task.exception)
+                            return@OnCompleteListener
+                        }
+
+                        val token = task.result
+
+                        // Print device token
+                        Log.d("token on success", token)
+
+                        // Create eventbridge rule
+                        val scope = CoroutineScope(Job() + Dispatchers.IO)
+                        val singleJobItem = scope.async(Dispatchers.IO) { reminderService().createReminderRule(createCronExp(), token) }
+
+                        runBlocking {
+                            scope.launch {
+                                singleJobItem.await()
+                            }
+                            singleJobItem.join()
+                            displayToast("Reminder successfully created")
+
+                            val intent = Intent(applicationContext, ListRemindersActivity::class.java)
+                            startActivity(intent)
+                        }
+                    })
             }
         }
     }
@@ -155,13 +192,14 @@ class ReminderFormActivity : AppCompatActivity() {
         return "cron($displayMin $selectedHour ? * $selectedDays *)"
     }
 
-    // Function to call createReminderRule API
-    private fun createReminderRule() {
-        val cronExp = createCronExp()
+    private fun displayToast(msg: String) {
+        return Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
 
-        val scope = CoroutineScope(Job() + Dispatchers.IO)
-        val singleJobItem = scope.async(Dispatchers.IO) { reminderService().createReminder(cronExp) }
-
-        scope.launch { singleJobItem.await() }
+    private fun loadOverlay() {
+        runOnUiThread {
+            loadOverlay.setBackgroundColor(Color.GRAY)
+            loadOverlay.background.alpha = 200
+        }
     }
 }
