@@ -28,6 +28,9 @@ class reminderService {
     private val getReminderDomain = "nmwcsprxwk.execute-api.us-east-1.amazonaws.com"
     private val getReminderPath = "/test/getreminders"
 
+    private val deleteReminderDomain = "nwhgaipbl8.execute-api.us-east-1.amazonaws.com"
+    private val deleteReminderPath = "/test/deletereminderrule"
+
     // Function to create Eventbridge rule
     fun createReminderRule(cronExp: String, deviceToken: String) {
 
@@ -111,6 +114,43 @@ class reminderService {
         }
 
         return null
+    }
+
+    // Function to delete rule from EventBridge
+    fun deleteReminderRule(ruleName: String) {
+        val json = JSONObject()
+        json.put("ruleName", ruleName)
+
+        val body = json.toString().toRequestBody(("application/json").toMediaType())
+
+        // Build request path
+        val uriPath = "$protocol$deleteReminderDomain$deleteReminderPath"
+        val request = Request.Builder()
+            .url(uriPath)
+            .post(body)
+            .build()
+
+        Log.d("responseMsg", "Deleting Eventbridge rule $ruleName at $uriPath")
+
+        try {
+            val response = client.newCall(request).execute()
+            if (response.isSuccessful) {
+                Log.d("responseMsg", "delete rule successful")
+
+                // Sometimes error but returned as success (status code 200)
+                val errorMsg = response.body?.string() ?: "none"
+                println("error: $errorMsg")
+            } else {
+                Log.d("responseMsg", "delete rule failed")
+                Log.d("responsefullMsg", response.code.toString())
+                Log.d("responsefullMsg", response.body.toString())
+            }
+        } catch (e: Exception) {
+            Log.d("responseMsg", "code failed")
+            e.printStackTrace()
+        }
+
+        return
     }
 
     // Function to get device token

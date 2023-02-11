@@ -3,6 +3,8 @@ package com.nyp.sit.aws.project.onlyplants
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.ListView
@@ -13,14 +15,13 @@ import com.nyp.sit.aws.project.onlyplants.Model.ReminderRule
 import com.nyp.sit.aws.project.onlyplants.Model.reminderService
 import kotlinx.android.synthetic.main.activity_list_reminders.*
 import kotlinx.coroutines.*
-import java.util.*
 
 class ListRemindersActivity : AppCompatActivity(){
 
     private var reminderList: Array<ReminderRule>? = null
-    private var reminderNameList: Array<String> = emptyArray()
+    private var reminderDisplayList: Array<String> = emptyArray()
     private lateinit var arrayAdapter: ArrayAdapter<String>
-    private var reminderArnList: Array<String> = emptyArray()
+    private var reminderNameList: Array<String> = emptyArray()
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -71,12 +72,31 @@ class ListRemindersActivity : AppCompatActivity(){
 
                 }
             })
+    }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.delete_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            R.id.deleteBtn -> {
+                val intent = Intent(this, DeleteReminderActivity::class.java)
+                intent.putExtra("reminderDisplayList", reminderDisplayList)
+                intent.putExtra("reminderNameList", reminderNameList)
+                startActivity(intent)
+            }
+
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
     private fun refreshRuleLVDisplay() {
         // Check if any rules were created from this device
-        if (reminderList == null) {
+        if (reminderList.isNullOrEmpty()) {
             println("Reminder List is Null")
             ruleLV.visibility = View.GONE
             noRulesTV.setText(R.string.no_reminders_set)
@@ -87,14 +107,14 @@ class ListRemindersActivity : AppCompatActivity(){
 
             for (rule in reminderList!!) {
                 val listStr: String = convertCronToString(rule)
-                reminderNameList += listStr
-                reminderArnList += rule.Arn
+                reminderDisplayList += listStr
+                reminderNameList += rule.Name
             }
 
             val listView = findViewById<ListView>(R.id.ruleLV)
             arrayAdapter = ArrayAdapter(this,
                 android.R.layout.simple_list_item_1,
-                reminderNameList)
+                reminderDisplayList)
             listView.adapter = arrayAdapter
 
             noRulesTV.visibility = View.GONE
