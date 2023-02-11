@@ -9,7 +9,7 @@ object Credentials {
     val mainAccount = Credentials("AKIA3NYMVU3R3ZBCXMWM",
         "CfPpicm2xG+UeEsDai7clleHCsVYJMHMLAhMaMbY")
 
-    val learnersLab = Credentials("ASIAWMTXAENCPGAGFJXQ",
-        "vykTeeQRzmZHu2x+no7lsEFs/T/n47QDkoeuAG1m",
-        "FwoGZXIvYXdzELH//////////wEaDCWU8UmDveiU49bWMiK7ARRuLlF6hOYiFqyM1SGBsRrueCnhGBItOImO8W12dn1eJCLBeXixtpvz5h6H1dAF0PI1jpFilN2DG401lt4Tk9NyG0IC8E7YsDnkeljH1zMfIoBhLy9ZU8eM20IA6PtGS4/zIpqtLoVozDmOroORiU1TQIJusQKTK0vuvi9AJBJ0CYS4hcHwwRqzPtGesC2mIo840X+SzcdL7n7/zGB/4yQE27IpwKLI1TvWTqmDg2sUBfhiD1N+6v5HAMQowPKrnAYyLUwB9iO+81KDU0CRzZQtTaiYIm+QmjoUFWkC/JSgeKf8Y/d7SKWoXEt7w+wihQ==")
+    val learnersLab = Credentials("ASIAXVBGKVUT4UI5ZQMD",
+        "jImvctFdgwrWCMDpT6qY38U0PPdFKYTEyW8gou2W",
+        "FwoGZXIvYXdzEN///////////wEaDGymfAeAs46o1fnBECK7AZwzMEmHrNm8lwkEVECSjbnsTN3SlrcDEFM5bXiIJ4eQdV+y3/FcMEdfAtHL6K2sLpIva1hSVmjtJ41Eenm3mz1ky7ycSOPjuo5Y3HenwQ3Nhfbon8+MRyeEyiQjyTEmDcsqU7edt5PTsd9s4uxWW0ppoG3wlWkmUk80oTaY3Cs0eSoOeB4rkqrohdu41dJ2wwYlf8+yWVdMh2F4UScLrwY7TmfbM9Ft984EoqnG/3EIlJOu/aR33CmgRggou/21nAYyLbM+HkPOdUDhSPtJ/RlAwKWA1mLFHtociDMswLHeWMvjnntnov6VQEBJhSOOeg==")
 }

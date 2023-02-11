@@ -3,7 +3,8 @@
     package="com.nyp.sit.aws.project.onlyplants">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -13,11 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlyPlants">
         <activity
-            android:name=".View.PlantIdentifier.PlantInformation"
-            android:exported="false" />
-        <activity
-            android:name=".View.PlantIdentifier.Camera"
-            android:exported="true" />
+            android:name=".View.PlantInformation.PlantSearch"
+            android:exported="true">
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true">
@@ -27,7 +26,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
+        <activity
+            android:name=".View.LanguageTranslate.LanguageTranslateActivity"
+            android:exported="true" />
+        <activity
+            android:name=".View.PlantIdentifier.PlantIdentifierActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".View.PlantInformation.PlantInformationActivity"
+            android:exported="false" />
+    </application>
 
 </manifest>

@@ -1,35 +1,96 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".View.PlantIdentifier.PlantInformation">
-
-    <Button
-        android:id="@+id/pi_detecthealth_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Detect health"/>
-
-    <Button
-        android:id="@+id/pi_save_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:text="Save"/>
+    tools:context=".View.LanguageTranslate.LanguageTranslateActivity"
+    android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end">
 
-<!--        image-->
-<!--    type-->
-<!--        description-->
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50px"
+            android:layout_marginRight="70px"
+            android:padding="15px"
+            android:text="Search More"
+            android:id="@+id/pin_Button_SearchMore"
+            android:textSize="30px"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50px"
+            android:layout_marginRight="60px"
+            android:padding="15px"
+            android:text="Post"
+            android:id="@+id/pin_Button_Post"
+            android:textSize="30px"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50px"
+            android:layout_marginRight="100px"
+            android:padding="10px"
+            android:text="Translate"
+            android:id="@+id/pin_Button_Translate"
+            android:textSize="30px"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/pin_IV_PlantImage"
+            android:maxWidth="400px"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Plant type: "
+            android:id="@+id/pin_TV_PlantName"
+            android:layout_marginTop="50px"/>
+
+        <TextView
+            android:id="@+id/pin_TV_PlantDescriptionLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Description: "
+            android:layout_marginTop="50px"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:width="700px"
+            android:id="@+id/pin_TV_PlantDescription"
+            android:layout_marginTop="20px"
+            android:background="@drawable/back"
+            android:textAlignment="center"/>
+
+        <!--    <Button-->
+        <!--        android:layout_width="wrap_content"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:width="400px"-->
+        <!--        android:text="Search"-->
+        <!--        android:id="@+id/pin_B_Search"/>-->
+
     </LinearLayout>
 
 
-
-
-
-</RelativeLayout>
+</LinearLayout>
