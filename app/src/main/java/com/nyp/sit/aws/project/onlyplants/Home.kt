@@ -26,10 +26,12 @@ import org.json.JSONException
 class Home : AppCompatActivity() {
     private lateinit var addbutton: ImageView
     var test=""
+
     private fun setupRecyclerView(posts: List<Post>) {
         val adapter = PostAdapter(posts)
-        recycler_view_story.adapter = adapter
+        adapter.notifyDataSetChanged()
         recycler_view_story.layoutManager = LinearLayoutManager(this)
+        recycler_view_story.adapter = adapter
     }
     private fun parseJson(jsonString: String): List<Post> {
         val jsonArray = JSONArray(jsonString)
@@ -59,32 +61,31 @@ class Home : AppCompatActivity() {
                 setupRecyclerView(posts)
             }
         }
-        bottom_navigation.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.menu_item_1 -> {
-                    // handle menu item 1 click
-                    true
-                }
-                R.id.menu_item_2 -> {
-                    // handle menu item 2 click
-                    true
-                }
-                R.id.menu_item_3 -> {
-                    val intent = Intent(this, MonitorPlants::class.java)
-                    startActivity(intent)
-                    true
-                }
-                else -> false
-            }
-        }
+//        bottom_navigation.setOnNavigationItemSelectedListener { item ->
+//            when (item.itemId) {
+//                R.id.menu_item_1 -> {
+//                    // handle menu item 1 click
+//                    true
+//                }
+//                R.id.menu_item_2 -> {
+//                    // handle menu item 2 click
+//                    true
+//                }
+//                R.id.menu_item_3 -> {
+//                    val intent = Intent(this, MonitorPlants::class.java)
+//                    startActivity(intent)
+//                    true
+//                }
+//                else -> false
+//            }
+//        }
 
     }
-
-    class PostAdapter(private val posts: List<Post>) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
+    class PostAdapter(private var posts: List<Post>) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
 
         class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
             fun bind(post: Post) {
-                itemView.Caption.text = post.caption
+                itemView.CaptionText.text = post.caption
                 Picasso.get().load(post.imageUrl).into(itemView.post_image_home)
             }
         }

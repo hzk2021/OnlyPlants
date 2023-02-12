@@ -102,9 +102,9 @@ class SocialMediaService {
         val response = client.newCall(request).execute()
         if (response.isSuccessful) {
             uploadimagetos3=response.body.string()
-            Log.d("Result", uploadimagetos3)
+            Log.d("Result", "Upload Image")
         } else {
-            Log.d("PostRetrievalError", response.message)
+            Log.d("UploadImageError", response.message)
             uploadimagetos3 ="Error"
         }
         return uploadimagetos3

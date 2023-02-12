@@ -31,7 +31,6 @@ class AddPost : AppCompatActivity() {
     var pictureexist=false
     var moderationresult=""
     var base64Image=""
-    var testvalue=""
     companion object{
         val Image_Request_Code=100
     }
@@ -52,19 +51,18 @@ class AddPost : AppCompatActivity() {
         imagebuttontest.setOnClickListener {
             if((captiontext.text.toString().trim()!="") and pictureexist) {
                GlobalScope.launch(Dispatchers.IO) {
-                   val imageurl=SocialMediaService().UploadImageToS3(base64Image)
-                   if (imageurl.trim()!="") {
-                      SocialMediaService().CreatePost(
-                           caption = captiontext.text.toString(),
-                           imageUrl = imageurl.replace("\"", "")
-                       )
-                   }
+                       val imageurl = SocialMediaService().UploadImageToS3(base64Image)
+                       if (imageurl.trim() != "") {
+                           SocialMediaService().CreatePost(
+                               caption = captiontext.text.toString(),
+                               imageUrl = imageurl.replace("\"", "")
+                           )
+                           val intent = Intent(this@AddPost,Home::class.java)
+                           startActivity(intent)
+                       }
                }
-                val intent = Intent(this, Home::class.java)
-                startActivity(intent)
-           }
+            }
         }
-        Log.d("Result",testvalue)
 
     }
     private fun pickImageFromGallery(){
