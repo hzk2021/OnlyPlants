@@ -1,11 +1,12 @@
-<<<<<<< HEAD
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-android-extensions'
+    id 'com.google.gms.google-services'
+    id 'kotlinx-serialization'
 }
-
 android {
+
     compileSdk 31
 
     defaultConfig {
@@ -31,12 +32,15 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+//    packagingOptions {
+//        exclude("META-INF/*")
+//    }
 }
 
 dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.7.20"
     implementation 'androidx.core:core-ktx:1.7.0'
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
@@ -44,21 +48,10 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation 'com.google.firebase:firebase-messaging-ktx:23.0.2'
 
     // Coroutine/Async
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-
-    // AWS Dependencies (add whatever you need). DO NOT USE BETA VERSIONS.
-    // there's actually no need for this
-
-    implementation("aws.sdk.kotlin:apigateway:0.17.0-beta")
-    implementation("aws.sdk.kotlin:s3:0.17.0-beta")
-    implementation("aws.sdk.kotlin:lambda:0.17.0-beta")
-    implementation("aws.sdk.kotlin:rekognition:0.17.0-beta")
-    implementation("aws.sdk.kotlin:translate:0.17.0-beta")
-    implementation("aws.sdk.kotlin:dynamodb:0.17.0-beta")
-
-
 
     // Fotoapparat & Material Design (Camera)
     implementation 'io.fotoapparat:fotoapparat:2.6.1'
@@ -67,76 +60,9 @@ dependencies {
     // HTTP
     implementation 'com.squareup.okhttp3:okhttp:3.8.1'
 
-
-=======
-plugins {
-    id 'com.android.application'
-    id 'kotlin-android'
-    id 'kotlin-android-extensions'
-    id 'com.google.gms.google-services'
-    id 'kotlinx-serialization'
-}
-
-android {
-    compileSdk 31
-
-    defaultConfig {
-        applicationId "com.nyp.sit.aws.project.onlyplants"
-        minSdk 27
-        targetSdk 31
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = '1.8'
-    }
-<<<<<<< HEAD
-
-=======
->>>>>>> feature-reminder-service
-    packagingOptions {
-        exclude("META-INF/*")
-    }
-}
-
-dependencies {
-
-    implementation 'androidx.core:core-ktx:1.7.0'
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'com.google.android.material:material:1.5.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
-    implementation 'com.google.firebase:firebase-messaging-ktx:23.0.2'
-    testImplementation 'junit:junit:4.+'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    // New
     implementation 'androidx.recyclerview:recyclerview:1.2.0-alpha03'
     implementation 'com.squareup.picasso:picasso:2.71828'
-
-    // Coroutine/Async
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
-
-    // AWS Dependencies (add whatever you need). DO NOT USE BETA VERSIONS.
-<<<<<<< HEAD
-    implementation("aws.sdk.kotlin:apigateway:0.17.0-beta")
-    implementation("aws.sdk.kotlin:s3:0.17.0-beta")
-    implementation("aws.sdk.kotlin:lambda:0.17.0-beta")
-    implementation("aws.sdk.kotlin:rekognition:0.17.0-beta")
-    implementation("aws.sdk.kotlin:translate:0.17.0-beta")
-    implementation("aws.sdk.kotlin:dynamodb:0.17.0-beta")
-
 
     // Added for location services:
     implementation 'org.maplibre.gl:android-sdk:9.5.2'
@@ -144,25 +70,12 @@ dependencies {
     implementation 'com.amplifyframework:aws-geo-location:0.3.1'
     implementation 'com.amplifyframework:maplibre-adapter:0.3.1'
 
-    // Fotoapparat & Material Design (Camera)
-    implementation 'io.fotoapparat:fotoapparat:2.6.1'
-    implementation 'com.google.android.material:material:1.0.0.0-rc01'
-
     // AWS Transcribe (STT)
     implementation("software.amazon.awssdk:transcribestreaming:2.19.33")
-
->>>>>>> main
-=======
-    implementation("aws.sdk.kotlin:apigateway:0.16.0")
-    implementation("aws.sdk.kotlin:s3:0.16.0")
-    implementation("aws.sdk.kotlin:lambda:0.16.0")
-    implementation("aws.sdk.kotlin:rekognition:0.16.0")
-    implementation 'com.squareup.okhttp3:okhttp:3.8.1'
 
     // Google Firebase (Reminder Service)
     implementation platform('com.google.firebase:firebase-bom:31.2.0')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.1'
     implementation("org.jetbrains.kotlinx:kotlinx-datetime:0.3.2")
->>>>>>> feature-reminder-service
 }
