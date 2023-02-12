@@ -41,7 +41,54 @@
         </activity>
         <activity
             android:name=".View.PlantInformation.PlantInformationActivity"
-            android:exported="false" />
+            android:exported="true" />
+        <activity
+            android:name=".Home"
+            android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".AddPost"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".Post"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".DeleteReminderActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".ListRemindersActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <service
+            android:name=".Model.myFirebaseMessagingService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".ReminderFormActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".STTActivity"
+            android:exported="true" />
+
     </application>
 
 

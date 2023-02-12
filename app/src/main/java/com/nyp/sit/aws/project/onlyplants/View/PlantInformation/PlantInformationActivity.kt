@@ -10,6 +10,7 @@ import android.util.Base64
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import com.nyp.sit.aws.project.onlyplants.AddPost
 import com.nyp.sit.aws.project.onlyplants.Model.LanguageTranslate.LanguageTranslateService
 import com.nyp.sit.aws.project.onlyplants.Model.Plant.PlantService
 import com.nyp.sit.aws.project.onlyplants.R
@@ -82,6 +83,10 @@ class PlantInformationActivity : AppCompatActivity() {
             }
         }
 
+        pin_Button_Post.setOnClickListener {
+            val intent = Intent(this, AddPost::class.java)
+            startActivity(intent)
+        }
 
         pin_Button_SearchMore.setOnClickListener {
             val plantSearchIntent = Intent(this, PlantSearch::class.java)

@@ -41,12 +41,12 @@ class STTActivity : AppCompatActivity() {
 //            dialog.show(supportFragmentManager, "sttDialogFragment")
         }
 
-        audioSetup()
+//        audioSetup()
     }
 
     fun audioSetup() {
 
-        micBtn.isEnabled = STT?.hasMicrophone() ?: false
+//        micBtn.isEnabled = STT?.hasMicrophone() ?: false
 
         val tempMp3 = File.createTempFile("searchString", "3gp", applicationContext.cacheDir)
         tempMp3.deleteOnExit()
