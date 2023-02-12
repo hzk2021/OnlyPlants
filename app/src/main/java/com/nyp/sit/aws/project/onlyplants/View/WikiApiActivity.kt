@@ -9,8 +9,6 @@ import kotlinx.coroutines.*
 
 class WikiApiService : AppCompatActivity() {
 
-    val credentials = Credentials.learnersLab
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_wiki_api)

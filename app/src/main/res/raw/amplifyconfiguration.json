@@ -1,0 +1,75 @@
+{
+    "UserAgent": "aws-amplify-cli/2.0",
+    "Version": "1.0",
+    "auth": {
+        "plugins": {
+            "awsCognitoAuthPlugin": {
+                "UserAgent": "aws-amplify-cli/0.1.0",
+                "Version": "0.1.0",
+                "IdentityManager": {
+                    "Default": {}
+                },
+                "CredentialsProvider": {
+                    "CognitoIdentity": {
+                        "Default": {
+                            "PoolId": "us-east-1:ad35bd1b-f0c8-489f-a26a-6ae3eaaa070e",
+                            "Region": "us-east-1"
+                        }
+                    }
+                },
+                "CognitoUserPool": {
+                    "Default": {
+                        "PoolId": "us-east-1_k8PmMueWo",
+                        "AppClientId": "2v34o9l04ptha315cqneintoun",
+                        "Region": "us-east-1"
+                    }
+                },
+                "Auth": {
+                    "Default": {
+                        "authenticationFlowType": "USER_SRP_AUTH",
+                        "socialProviders": [],
+                        "usernameAttributes": [
+                            "EMAIL",
+                            "PHONE_NUMBER"
+                        ],
+                        "signupAttributes": [
+                            "EMAIL"
+                        ],
+                        "passwordProtectionSettings": {
+                            "passwordPolicyMinLength": 8,
+                            "passwordPolicyCharacters": []
+                        },
+                        "mfaConfiguration": "OFF",
+                        "mfaTypes": [
+                            "SMS"
+                        ],
+                        "verificationMechanisms": [
+                            "EMAIL"
+                        ]
+                    }
+                }
+            }
+        }
+    },
+    "geo": {
+        "plugins": {
+            "awsLocationGeoPlugin": {
+                "region": "ap-southeast-1",
+                "maps": {
+                    "items": {
+                        "MyMap": {
+                            "style": "VectorEsriStreets"
+                        }
+                    },
+                    "default": "MyMap"
+                },
+                "searchIndices": {
+                    "items": [
+                        "myIndexName"
+                    ],
+                    "default" : "myIndexName"
+                }
+            }
+        }
+    }
+}

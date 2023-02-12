@@ -34,7 +34,7 @@ class Call_Wiki {
 
         val response = client.newCall(request).execute()
         if (response.isSuccessful){
-            GetWikiInfo = response.body.string()
+            GetWikiInfo = response.body!!.string()
             Log.d("WikiInfoReply", GetWikiInfo)
         }
         else{
