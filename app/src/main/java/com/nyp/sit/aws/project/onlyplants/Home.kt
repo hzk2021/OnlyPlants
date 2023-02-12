@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.ImageView
 import android.view.LayoutInflater;
+import android.view.MenuItem
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -49,6 +50,10 @@ class Home : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_home)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         addbutton = findViewById<ImageView>(R.id.addbutton)
         addbutton.setOnClickListener {
             val intent = Intent(this, AddPost::class.java)
@@ -102,5 +107,17 @@ class Home : AppCompatActivity() {
         override fun getItemCount(): Int {
             return posts.size
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            android.R.id.home -> {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }

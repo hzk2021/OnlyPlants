@@ -29,6 +29,9 @@ class ListRemindersActivity : AppCompatActivity(){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_reminders)
 
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_home)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         // Set intent to go to ReminderFormActivity
         addReminderBtn.setOnClickListener {
             val intent = Intent(this, ReminderFormActivity::class.java)
@@ -85,6 +88,10 @@ class ListRemindersActivity : AppCompatActivity(){
                 val intent = Intent(this, DeleteReminderActivity::class.java)
                 intent.putExtra("reminderDisplayList", reminderDisplayList)
                 intent.putExtra("reminderNameList", reminderNameList)
+                startActivity(intent)
+            }
+            android.R.id.home -> {
+                val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
 

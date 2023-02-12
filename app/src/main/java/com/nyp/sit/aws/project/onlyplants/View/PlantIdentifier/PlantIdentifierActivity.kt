@@ -8,9 +8,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Base64
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import com.nyp.sit.aws.project.onlyplants.MainActivity
 import com.nyp.sit.aws.project.onlyplants.Model.Plant.PlantService
 import com.nyp.sit.aws.project.onlyplants.R
 import com.nyp.sit.aws.project.onlyplants.View.PlantInformation.PlantInformationActivity
@@ -28,6 +30,9 @@ class PlantIdentifierActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plant_identifier)
+
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_home)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         imageView = findViewById(R.id.pid_PlantImage)
         button = findViewById(R.id.pid_B_SelectPhoto)
@@ -80,5 +85,17 @@ class PlantIdentifierActivity : AppCompatActivity() {
         val encImage = Base64.encodeToString(b, Base64.DEFAULT)
 
         return encImage
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            android.R.id.home -> {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }

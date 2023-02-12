@@ -7,10 +7,12 @@ import android.graphics.BitmapFactory
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Base64
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import com.nyp.sit.aws.project.onlyplants.AddPost
+import com.nyp.sit.aws.project.onlyplants.MainActivity
 import com.nyp.sit.aws.project.onlyplants.Model.LanguageTranslate.LanguageTranslateService
 import com.nyp.sit.aws.project.onlyplants.Model.Plant.PlantService
 import com.nyp.sit.aws.project.onlyplants.R
@@ -26,6 +28,9 @@ class PlantInformationActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_plant_information)
+
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_home)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         if (intent != null)  {
             val encodedPlantImg = intent.getByteArrayExtra("plant_image")?.let {
@@ -114,6 +119,18 @@ class PlantInformationActivity : AppCompatActivity() {
                 translateViews(view.getChildAt(i), fromLang, toLang)
             }
         }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            android.R.id.home -> {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 
 }

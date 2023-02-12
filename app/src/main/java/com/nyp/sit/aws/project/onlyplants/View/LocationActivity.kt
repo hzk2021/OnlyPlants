@@ -1,8 +1,10 @@
 package com.nyp.sit.aws.project.onlyplants.View
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.MenuItem
 import android.widget.TextView
 
 import com.amplifyframework.AmplifyException
@@ -18,6 +20,7 @@ import com.amplifyframework.geo.options.GeoSearchByCoordinatesOptions
 import com.mapbox.mapboxsdk.camera.CameraPosition
 import com.mapbox.mapboxsdk.geometry.LatLng
 import com.mapbox.mapboxsdk.maps.MapboxMap
+import com.nyp.sit.aws.project.onlyplants.MainActivity
 import com.nyp.sit.aws.project.onlyplants.R
 
 //import com.amazonaws.services.location.model.*
@@ -45,6 +48,9 @@ class LocationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         initAmplify()
         setContentView(R.layout.activity_location_service)
+
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_home)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         mapView.getMapAsync { map ->
             val initialPosition = LatLng(1.3800, 103.8489)
@@ -151,5 +157,17 @@ class LocationActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         mapView?.onDestroy()
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            android.R.id.home -> {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }

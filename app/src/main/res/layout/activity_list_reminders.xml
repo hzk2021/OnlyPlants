@@ -33,5 +33,4 @@
         android:layout_margin="20dp"
         android:src="@android:drawable/ic_input_add"
     />
-
 </RelativeLayout>

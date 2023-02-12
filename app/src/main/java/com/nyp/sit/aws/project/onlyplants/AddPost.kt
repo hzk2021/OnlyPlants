@@ -12,6 +12,7 @@ import android.net.Uri
 import java.io.ByteArrayOutputStream
 import android.util.Base64;
 import android.util.Log
+import android.view.MenuItem
 import android.webkit.MimeTypeMap
 import android.widget.ImageButton
 import android.widget.TextView
@@ -35,6 +36,10 @@ class AddPost : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_post)
+
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_home)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         imageView = findViewById<ImageView>(R.id.picture_to_be_posted)
         imagebuttontest=findViewById<ImageButton>(R.id.post_picture)
         captiontext=findViewById<TextView>(R.id.write_caption)
@@ -108,6 +113,19 @@ class AddPost : AppCompatActivity() {
         }
 
     }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+
+        when (item.itemId) {
+            android.R.id.home -> {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+        }
+
+        return super.onOptionsItemSelected(item)
+    }
+
     fun showToast(message: String) {
         val toast = Toast.makeText(this, message, Toast.LENGTH_LONG)
         toast.show()

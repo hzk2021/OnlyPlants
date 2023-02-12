@@ -26,6 +26,9 @@ class DeleteReminderActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_delete_reminder)
 
+        supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_home)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         val intent = intent
         reminderDisplayList = intent.getStringArrayExtra("reminderDisplayList") as Array<String>
         reminderNameList = intent.getStringArrayExtra("reminderNameList") as Array<String>
@@ -43,6 +46,10 @@ class DeleteReminderActivity : AppCompatActivity() {
 
         when (item.itemId) {
             R.id.cancelBtn -> startActivity(Intent(this, ListRemindersActivity::class.java))
+            android.R.id.home -> {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
         }
 
         return super.onOptionsItemSelected(item)
