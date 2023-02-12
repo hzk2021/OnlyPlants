@@ -79,7 +79,6 @@ class ReminderFormActivity : AppCompatActivity() {
                 mainBackBtn.setBackgroundColor(Color.LTGRAY)
                 loadOverlay()
 
-
                 // Function is async, must wait for deviceToken to be
                 // retrieved before creating eventbridge rule
                 FirebaseMessaging.getInstance().token
@@ -105,7 +104,6 @@ class ReminderFormActivity : AppCompatActivity() {
                             }
                             singleJobItem.join()
                             displayToast("Reminder successfully created")
-
                             val intent = Intent(applicationContext, ListRemindersActivity::class.java)
                             startActivity(intent)
                         }
@@ -155,7 +153,7 @@ class ReminderFormActivity : AppCompatActivity() {
     }
 
     // Function to display days
-    private fun listDaysinString() {
+    private fun listDaysInString() {
         if (selectedDays == null) {
             displayDays = "Not selected"
         }
@@ -171,9 +169,9 @@ class ReminderFormActivity : AppCompatActivity() {
     fun refreshDisplay() {
         convertTimeDisplay()
         convertMinutes()
-        listDaysinString()
+        listDaysInString()
 
-        var timeExp: String? = ""
+        val timeExp: String?
 
         if (displayHour == null && displayMin == null) {
             timeExp = displayTime

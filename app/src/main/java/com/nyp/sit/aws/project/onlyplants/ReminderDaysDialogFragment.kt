@@ -2,7 +2,6 @@ package com.nyp.sit.aws.project.onlyplants
 
 import android.content.DialogInterface
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +9,6 @@ import android.widget.CheckBox
 import androidx.fragment.app.DialogFragment
 import kotlinx.android.synthetic.main.fragment_dialog_reminder_days.*
 import kotlinx.android.synthetic.main.fragment_dialog_reminder_days.view.*
-import kotlinx.android.synthetic.main.fragment_dialog_reminder_time.view.*
-import kotlinx.android.synthetic.main.fragment_dialog_reminder_time.view.cancelBtn
-import kotlinx.android.synthetic.main.fragment_dialog_reminder_time.view.saveBtn
 
 class ReminderDaysDialogFragment: DialogFragment() {
 
@@ -20,8 +16,8 @@ class ReminderDaysDialogFragment: DialogFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        var rootView: View = inflater.inflate(R.layout.fragment_dialog_reminder_days,
+    ): View {
+        val rootView: View = inflater.inflate(R.layout.fragment_dialog_reminder_days,
             container,
             false)
 
@@ -29,7 +25,7 @@ class ReminderDaysDialogFragment: DialogFragment() {
         val activity: ReminderFormActivity  = activity as ReminderFormActivity
 //        Log.d("test","days saved: " + activity.selectedDays)
 
-        rootView.radioGrp.setOnCheckedChangeListener { radioGroup, i ->
+        rootView.radioGrp.setOnCheckedChangeListener { _, _ ->
             val daysCB: Array<CheckBox> = arrayOf(sunCB, monCB, tueCB,
                 wedCB , thuCB , friCB , satCB)
 
@@ -77,7 +73,7 @@ class ReminderDaysDialogFragment: DialogFragment() {
 
             // Check if no option was checked/string is empty
             if (selectedDays.isBlank()){
-                errorMsg.text = "Please select at least one option"
+                errorMsg.text = getString(R.string.days_dialog_error_msg)
                 errorMsg.visibility = View.VISIBLE
             }
 
@@ -107,7 +103,7 @@ class ReminderDaysDialogFragment: DialogFragment() {
     }
 
     // Function to enable/disable checkboxes based on radio button selection
-    fun enableCheckbox(daysCB: Array<CheckBox>){
+    private fun enableCheckbox(daysCB: Array<CheckBox>){
         if (customRB.isChecked){
             for (day in daysCB){
                 day.isEnabled = true
@@ -121,7 +117,7 @@ class ReminderDaysDialogFragment: DialogFragment() {
     }
 
     // Function to remove error message
-    fun removeError(){
+    private fun removeError(){
         if (errorMsg.visibility == View.VISIBLE && errorMsg.text.isNotBlank()){
             errorMsg.text = ""
             errorMsg.visibility = View.GONE

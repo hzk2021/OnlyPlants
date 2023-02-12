@@ -22,6 +22,7 @@ class ListRemindersActivity : AppCompatActivity(){
     private var reminderDisplayList: Array<String> = emptyArray()
     private lateinit var arrayAdapter: ArrayAdapter<String>
     private var reminderNameList: Array<String> = emptyArray()
+    private var mState: Boolean = false
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,8 +36,6 @@ class ListRemindersActivity : AppCompatActivity(){
         }
 
         // Retrieve rules from EventBridge
-        var token = ""
-
         FirebaseMessaging.getInstance().token
             .addOnCompleteListener(OnCompleteListener { task ->
                 if (!task.isSuccessful) {
@@ -44,7 +43,7 @@ class ListRemindersActivity : AppCompatActivity(){
                     return@OnCompleteListener
                 }
 
-                token = task.result
+                val token = task.result
 
                 Log.d("token on success", token)
 
@@ -94,6 +93,13 @@ class ListRemindersActivity : AppCompatActivity(){
         return super.onOptionsItemSelected(item)
     }
 
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+
+        menu?.findItem(R.id.deleteBtn)?.isEnabled = mState
+
+        return super.onPrepareOptionsMenu(menu)
+    }
+
     private fun refreshRuleLVDisplay() {
         // Check if any rules were created from this device
         if (reminderList.isNullOrEmpty()) {
@@ -101,6 +107,10 @@ class ListRemindersActivity : AppCompatActivity(){
             ruleLV.visibility = View.GONE
             noRulesTV.setText(R.string.no_reminders_set)
             noRulesTV.visibility = View.VISIBLE
+
+            // Disable delete button; no reminders to delete
+            mState = false
+            invalidateOptionsMenu()
         }
         else {
             println("Reminder List is not Null")
@@ -120,11 +130,15 @@ class ListRemindersActivity : AppCompatActivity(){
             noRulesTV.visibility = View.GONE
             noRulesTV.text = ""
             ruleLV.visibility = View.VISIBLE
+
+            // Display delete button
+            mState = true
+            invalidateOptionsMenu()
         }
     }
 
     // Function to convert cronExp into String
-    fun convertCronToString(rule: ReminderRule): String {
+    private fun convertCronToString(rule: ReminderRule): String {
 
         val cronExp = rule.ScheduleExpression
             .replace("cron(", "")
@@ -142,7 +156,7 @@ class ListRemindersActivity : AppCompatActivity(){
 
         val dayOfWeek = cronExpArray[4]
 
-        var fullStr = ""
+        val fullStr: String
 
         if (dayOfWeek == "*") {
             fullStr = "$timeStr (EVERYDAY)"
@@ -157,8 +171,8 @@ class ListRemindersActivity : AppCompatActivity(){
     // Function to convert time from 24 hours to 12 hours
     private fun convertTimeDisplay(selectedHour: Int): Array<Any> {
 
-        var displayHour: Int? = null
-        var displayTime = ""
+        val displayHour: Int?
+        val displayTime: String
 
         if (selectedHour == 0) {
             displayHour = 12

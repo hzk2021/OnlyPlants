@@ -16,8 +16,8 @@ class ReminderTimeDialogFragment: DialogFragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        var rootView: View = inflater.inflate(R.layout.fragment_dialog_reminder_time,
+    ): View {
+        val rootView: View = inflater.inflate(R.layout.fragment_dialog_reminder_time,
             container,
             false)
 

@@ -1,6 +1,7 @@
 package com.nyp.sit.aws.project.onlyplants
 
 import android.content.Intent
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
@@ -19,6 +20,7 @@ class DeleteReminderActivity : AppCompatActivity() {
     private lateinit var reminderDisplayList: Array<String>
     private lateinit var reminderNameList: Array<String>
     private lateinit var arrayAdapter: ArrayAdapter<String>
+    private var mState: Boolean = true
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +46,13 @@ class DeleteReminderActivity : AppCompatActivity() {
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+
+        menu?.findItem(R.id.deleteBtn)?.isEnabled = mState
+
+        return super.onPrepareOptionsMenu(menu)
     }
 
     private fun refreshRuleLVDisplay() {
@@ -84,6 +93,12 @@ class DeleteReminderActivity : AppCompatActivity() {
 
         builder.setPositiveButton("Yes") { dialog, _ ->
 
+            // Disable options menu
+            mState = false
+            invalidateOptionsMenu()
+
+            loadOverlay()
+
             // Delete eventbridge rule
             val scope = CoroutineScope(Job() + Dispatchers.IO)
             val singleJobItem = scope.async(Dispatchers.IO) {
@@ -110,6 +125,13 @@ class DeleteReminderActivity : AppCompatActivity() {
 
         val alert = builder.create()
         alert.show()
+    }
+
+    private fun loadOverlay() {
+        runOnUiThread {
+            loadOverlay.setBackgroundColor(Color.GRAY)
+            loadOverlay.background.alpha = 200
+        }
     }
 
     private fun displayToast(msg: String) {
