@@ -1,0 +1,2 @@
+com/nyp/sit/aws/project/onlyplants/BuildConfig.java
+ com.nyp.sit.aws.project.onlyplants.BuildConfig

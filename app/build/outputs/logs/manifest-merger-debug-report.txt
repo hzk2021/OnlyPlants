@@ -1,0 +1,275 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:2:1-46:12
+MERGED from [androidx.core:core-ktx:1.7.0] /Users/zhenkai/.gradle/caches/transforms-3/62c3a471a832919239ad9bfd11c75cda/transformed/jetified-core-ktx-1.7.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.material:material:1.5.0] /Users/zhenkai/.gradle/caches/transforms-3/9746c7c6921127fe4af42283545d20b5/transformed/material-1.5.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /Users/zhenkai/.gradle/caches/transforms-3/8873cd68729ab2f70d6f29fc8ab79875/transformed/constraintlayout-2.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.appcompat:appcompat:1.4.1] /Users/zhenkai/.gradle/caches/transforms-3/50a611762f03b8296ce0baea2a36cc61/transformed/appcompat-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [io.fotoapparat:fotoapparat:2.6.1] /Users/zhenkai/.gradle/caches/transforms-3/995c7550e92b4434aee77c2566a933c3/transformed/jetified-fotoapparat-2.6.1/AndroidManifest.xml:2:1-13:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/5f979c980e75d196b6e57226103af31a/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/zhenkai/.gradle/caches/transforms-3/9458519921885ebbda144e643b50c732/transformed/fragment-1.3.6/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.2.4] /Users/zhenkai/.gradle/caches/transforms-3/d5477774e3ca4349c0626706ce8ed58c/transformed/jetified-activity-1.2.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.4.1] /Users/zhenkai/.gradle/caches/transforms-3/e58c96568f6def7a057a956d9765e1fa/transformed/jetified-appcompat-resources-1.4.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/e0f683008e8fadf57f1edf551d3be87b/transformed/jetified-emoji2-views-helper-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.emoji2:emoji2:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/72ff2e44a4a4e353825c52394dd1a4ce/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/zhenkai/.gradle/caches/transforms-3/815f9746cee933bd6b0e62d5fe357418/transformed/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/281cca562456415932112034c7c85800/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/7b245f8f4d4076f9e859c0fe6c7b7a6a/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] /Users/zhenkai/.gradle/caches/transforms-3/cdd1ad8084692eec123f2d1cbc378738/transformed/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/e8254b70665660b7f2eb6ab6be28ef43/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/663657c0921008ca1b70e50d6628683a/transformed/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/c72c7e39b8ecff05132c80c011057612/transformed/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/10442ca7277693211ac57dc1b3b1aec0/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.loader:loader:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/e938e162276bc68c42a3a5949b0806a3/transformed/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/a2654cd9a6a6f6f821cef1d0d0cfc136/transformed/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.customview:customview:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/394c975612e213d8765902152d2464e6/transformed/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.7.0] /Users/zhenkai/.gradle/caches/transforms-3/fe666dbbf855cc43c1cc3b11d4b0d228/transformed/core-1.7.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/de9121dea42a3bed52661cfb8f273c38/transformed/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /Users/zhenkai/.gradle/caches/transforms-3/74b7d362a36a3f235359787e1abe7faa/transformed/jetified-lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/af233e7cec97eeda0592ee851651a283/transformed/jetified-savedstate-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /Users/zhenkai/.gradle/caches/transforms-3/0e42731f2c4ad984c1a9790109fd546d/transformed/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/5d00cbdce1d57f63ebb092d2bdb5e7a3/transformed/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/6b2e6f5c22bd7652c3eaac9155fd418a/transformed/exifinterface-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/zhenkai/.gradle/caches/transforms-3/9daf359a82a167c939efa68228cbbecc/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /Users/zhenkai/.gradle/caches/transforms-3/6858fe32a78fec65579144f84de115c2/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:17:1-37:12
+MERGED from [androidx.startup:startup-runtime:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/d7eea96fd4fd983bd01b2b76cfd4900d/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/5ae32ccccd4d1036cf529d6a8b9279c9/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/zhenkai/.gradle/caches/transforms-3/fc62622fe72c99147eb5b64f787c2d1b/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /Users/zhenkai/.gradle/caches/transforms-3/1d8906cdac1237c487142bc99b5c5e07/transformed/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0] /Users/zhenkai/.gradle/caches/transforms-3/08401c942d4ef36f67e84e342245fed9/transformed/lifecycle-runtime-2.4.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/zhenkai/.gradle/caches/transforms-3/cf3885704c6af9c62ca3d8e7b1039637/transformed/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/97fc2645befa4522c74ff83cbf6ee14a/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/89d8afeba275dfd1fdb2b505ace74a6d/transformed/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/0a3148129294105f14b005d3050ed31d/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/027b873c1d25365e2c1c8979817bf2d2/transformed/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/82627942c51ef9f7eda020dca66911ac/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:17:1-24:12
+INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:2:1-46:12
+INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:2:1-46:12
+	package
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:3:5-49
+		INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:2:1-46:12
+		INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:2:1-46:12
+		INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:2:11-69
+uses-permission#android.permission.INTERNET
+ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:5:5-67
+	android:name
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:5:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:6:5-79
+	android:name
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:6:22-76
+uses-permission#android.permission.CAMERA
+ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:7:5-65
+MERGED from [io.fotoapparat:fotoapparat:2.6.1] /Users/zhenkai/.gradle/caches/transforms-3/995c7550e92b4434aee77c2566a933c3/transformed/jetified-fotoapparat-2.6.1/AndroidManifest.xml:9:5-65
+MERGED from [io.fotoapparat:fotoapparat:2.6.1] /Users/zhenkai/.gradle/caches/transforms-3/995c7550e92b4434aee77c2566a933c3/transformed/jetified-fotoapparat-2.6.1/AndroidManifest.xml:9:5-65
+	android:name
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:7:22-62
+application
+ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:9:5-44:19
+MERGED from [com.google.android.material:material:1.5.0] /Users/zhenkai/.gradle/caches/transforms-3/9746c7c6921127fe4af42283545d20b5/transformed/material-1.5.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.5.0] /Users/zhenkai/.gradle/caches/transforms-3/9746c7c6921127fe4af42283545d20b5/transformed/material-1.5.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /Users/zhenkai/.gradle/caches/transforms-3/8873cd68729ab2f70d6f29fc8ab79875/transformed/constraintlayout-2.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /Users/zhenkai/.gradle/caches/transforms-3/8873cd68729ab2f70d6f29fc8ab79875/transformed/constraintlayout-2.1.3/AndroidManifest.xml:9:5-20
+MERGED from [io.fotoapparat:fotoapparat:2.6.1] /Users/zhenkai/.gradle/caches/transforms-3/995c7550e92b4434aee77c2566a933c3/transformed/jetified-fotoapparat-2.6.1/AndroidManifest.xml:11:5-20
+MERGED from [io.fotoapparat:fotoapparat:2.6.1] /Users/zhenkai/.gradle/caches/transforms-3/995c7550e92b4434aee77c2566a933c3/transformed/jetified-fotoapparat-2.6.1/AndroidManifest.xml:11:5-20
+MERGED from [androidx.emoji2:emoji2:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/72ff2e44a4a4e353825c52394dd1a4ce/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.emoji2:emoji2:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/72ff2e44a4a4e353825c52394dd1a4ce/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.core:core:1.7.0] /Users/zhenkai/.gradle/caches/transforms-3/fe666dbbf855cc43c1cc3b11d4b0d228/transformed/core-1.7.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.7.0] /Users/zhenkai/.gradle/caches/transforms-3/fe666dbbf855cc43c1cc3b11d4b0d228/transformed/core-1.7.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/zhenkai/.gradle/caches/transforms-3/9daf359a82a167c939efa68228cbbecc/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/zhenkai/.gradle/caches/transforms-3/9daf359a82a167c939efa68228cbbecc/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /Users/zhenkai/.gradle/caches/transforms-3/6858fe32a78fec65579144f84de115c2/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /Users/zhenkai/.gradle/caches/transforms-3/6858fe32a78fec65579144f84de115c2/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:25:5-35:19
+MERGED from [androidx.startup:startup-runtime:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/d7eea96fd4fd983bd01b2b76cfd4900d/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/d7eea96fd4fd983bd01b2b76cfd4900d/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:25:5-31:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.7.0] /Users/zhenkai/.gradle/caches/transforms-3/fe666dbbf855cc43c1cc3b11d4b0d228/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:12:9-41
+	android:roundIcon
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:13:9-54
+	android:icon
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:11:9-43
+	android:allowBackup
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:10:9-35
+	android:theme
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:15:9-48
+activity#com.nyp.sit.aws.project.onlyplants.View.PlantInformation.PlantSearch
+ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:16:9-19:20
+	android:exported
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:18:13-36
+	android:name
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:17:13-62
+activity#com.nyp.sit.aws.project.onlyplants.MainActivity
+ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:20:9-28:20
+	android:exported
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:22:13-36
+	android:name
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:21:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:23:13-27:29
+action#android.intent.action.MAIN
+ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:24:17-69
+	android:name
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:24:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:26:17-77
+	android:name
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:26:27-74
+activity#com.nyp.sit.aws.project.onlyplants.View.LanguageTranslate.LanguageTranslateActivity
+ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:29:9-31:39
+	android:exported
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:31:13-36
+	android:name
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:30:13-77
+activity#com.nyp.sit.aws.project.onlyplants.View.PlantIdentifier.PlantIdentifierActivity
+ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:32:9-40:20
+	android:exported
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:34:13-36
+	android:name
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:33:13-73
+activity#com.nyp.sit.aws.project.onlyplants.View.PlantInformation.PlantInformationActivity
+ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:41:9-43:40
+	android:exported
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:43:13-37
+	android:name
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml:42:13-75
+uses-sdk
+INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml
+INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml
+MERGED from [androidx.core:core-ktx:1.7.0] /Users/zhenkai/.gradle/caches/transforms-3/62c3a471a832919239ad9bfd11c75cda/transformed/jetified-core-ktx-1.7.0/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.7.0] /Users/zhenkai/.gradle/caches/transforms-3/62c3a471a832919239ad9bfd11c75cda/transformed/jetified-core-ktx-1.7.0/AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.material:material:1.5.0] /Users/zhenkai/.gradle/caches/transforms-3/9746c7c6921127fe4af42283545d20b5/transformed/material-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.5.0] /Users/zhenkai/.gradle/caches/transforms-3/9746c7c6921127fe4af42283545d20b5/transformed/material-1.5.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /Users/zhenkai/.gradle/caches/transforms-3/8873cd68729ab2f70d6f29fc8ab79875/transformed/constraintlayout-2.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.1.3] /Users/zhenkai/.gradle/caches/transforms-3/8873cd68729ab2f70d6f29fc8ab79875/transformed/constraintlayout-2.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.appcompat:appcompat:1.4.1] /Users/zhenkai/.gradle/caches/transforms-3/50a611762f03b8296ce0baea2a36cc61/transformed/appcompat-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.4.1] /Users/zhenkai/.gradle/caches/transforms-3/50a611762f03b8296ce0baea2a36cc61/transformed/appcompat-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [io.fotoapparat:fotoapparat:2.6.1] /Users/zhenkai/.gradle/caches/transforms-3/995c7550e92b4434aee77c2566a933c3/transformed/jetified-fotoapparat-2.6.1/AndroidManifest.xml:5:5-7:41
+MERGED from [io.fotoapparat:fotoapparat:2.6.1] /Users/zhenkai/.gradle/caches/transforms-3/995c7550e92b4434aee77c2566a933c3/transformed/jetified-fotoapparat-2.6.1/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/5f979c980e75d196b6e57226103af31a/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/5f979c980e75d196b6e57226103af31a/transformed/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/zhenkai/.gradle/caches/transforms-3/9458519921885ebbda144e643b50c732/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.3.6] /Users/zhenkai/.gradle/caches/transforms-3/9458519921885ebbda144e643b50c732/transformed/fragment-1.3.6/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.4] /Users/zhenkai/.gradle/caches/transforms-3/d5477774e3ca4349c0626706ce8ed58c/transformed/jetified-activity-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.2.4] /Users/zhenkai/.gradle/caches/transforms-3/d5477774e3ca4349c0626706ce8ed58c/transformed/jetified-activity-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.4.1] /Users/zhenkai/.gradle/caches/transforms-3/e58c96568f6def7a057a956d9765e1fa/transformed/jetified-appcompat-resources-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.4.1] /Users/zhenkai/.gradle/caches/transforms-3/e58c96568f6def7a057a956d9765e1fa/transformed/jetified-appcompat-resources-1.4.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/e0f683008e8fadf57f1edf551d3be87b/transformed/jetified-emoji2-views-helper-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2-views-helper:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/e0f683008e8fadf57f1edf551d3be87b/transformed/jetified-emoji2-views-helper-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.emoji2:emoji2:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/72ff2e44a4a4e353825c52394dd1a4ce/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.emoji2:emoji2:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/72ff2e44a4a4e353825c52394dd1a4ce/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/zhenkai/.gradle/caches/transforms-3/815f9746cee933bd6b0e62d5fe357418/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /Users/zhenkai/.gradle/caches/transforms-3/815f9746cee933bd6b0e62d5fe357418/transformed/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/281cca562456415932112034c7c85800/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/281cca562456415932112034c7c85800/transformed/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/7b245f8f4d4076f9e859c0fe6c7b7a6a/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/7b245f8f4d4076f9e859c0fe6c7b7a6a/transformed/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] /Users/zhenkai/.gradle/caches/transforms-3/cdd1ad8084692eec123f2d1cbc378738/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /Users/zhenkai/.gradle/caches/transforms-3/cdd1ad8084692eec123f2d1cbc378738/transformed/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/e8254b70665660b7f2eb6ab6be28ef43/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/e8254b70665660b7f2eb6ab6be28ef43/transformed/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/663657c0921008ca1b70e50d6628683a/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/663657c0921008ca1b70e50d6628683a/transformed/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/c72c7e39b8ecff05132c80c011057612/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/c72c7e39b8ecff05132c80c011057612/transformed/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/10442ca7277693211ac57dc1b3b1aec0/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/10442ca7277693211ac57dc1b3b1aec0/transformed/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/e938e162276bc68c42a3a5949b0806a3/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/e938e162276bc68c42a3a5949b0806a3/transformed/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/a2654cd9a6a6f6f821cef1d0d0cfc136/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/a2654cd9a6a6f6f821cef1d0d0cfc136/transformed/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/394c975612e213d8765902152d2464e6/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/394c975612e213d8765902152d2464e6/transformed/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.7.0] /Users/zhenkai/.gradle/caches/transforms-3/fe666dbbf855cc43c1cc3b11d4b0d228/transformed/core-1.7.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.7.0] /Users/zhenkai/.gradle/caches/transforms-3/fe666dbbf855cc43c1cc3b11d4b0d228/transformed/core-1.7.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/de9121dea42a3bed52661cfb8f273c38/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/de9121dea42a3bed52661cfb8f273c38/transformed/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /Users/zhenkai/.gradle/caches/transforms-3/74b7d362a36a3f235359787e1abe7faa/transformed/jetified-lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] /Users/zhenkai/.gradle/caches/transforms-3/74b7d362a36a3f235359787e1abe7faa/transformed/jetified-lifecycle-viewmodel-savedstate-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/af233e7cec97eeda0592ee851651a283/transformed/jetified-savedstate-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/af233e7cec97eeda0592ee851651a283/transformed/jetified-savedstate-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /Users/zhenkai/.gradle/caches/transforms-3/0e42731f2c4ad984c1a9790109fd546d/transformed/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] /Users/zhenkai/.gradle/caches/transforms-3/0e42731f2c4ad984c1a9790109fd546d/transformed/lifecycle-viewmodel-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/5d00cbdce1d57f63ebb092d2bdb5e7a3/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/5d00cbdce1d57f63ebb092d2bdb5e7a3/transformed/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/6b2e6f5c22bd7652c3eaac9155fd418a/transformed/exifinterface-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.exifinterface:exifinterface:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/6b2e6f5c22bd7652c3eaac9155fd418a/transformed/exifinterface-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/zhenkai/.gradle/caches/transforms-3/9daf359a82a167c939efa68228cbbecc/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /Users/zhenkai/.gradle/caches/transforms-3/9daf359a82a167c939efa68228cbbecc/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /Users/zhenkai/.gradle/caches/transforms-3/6858fe32a78fec65579144f84de115c2/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /Users/zhenkai/.gradle/caches/transforms-3/6858fe32a78fec65579144f84de115c2/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/d7eea96fd4fd983bd01b2b76cfd4900d/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/d7eea96fd4fd983bd01b2b76cfd4900d/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/5ae32ccccd4d1036cf529d6a8b9279c9/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/5ae32ccccd4d1036cf529d6a8b9279c9/transformed/jetified-tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/zhenkai/.gradle/caches/transforms-3/fc62622fe72c99147eb5b64f787c2d1b/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /Users/zhenkai/.gradle/caches/transforms-3/fc62622fe72c99147eb5b64f787c2d1b/transformed/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /Users/zhenkai/.gradle/caches/transforms-3/1d8906cdac1237c487142bc99b5c5e07/transformed/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.3.1] /Users/zhenkai/.gradle/caches/transforms-3/1d8906cdac1237c487142bc99b5c5e07/transformed/lifecycle-livedata-core-2.3.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0] /Users/zhenkai/.gradle/caches/transforms-3/08401c942d4ef36f67e84e342245fed9/transformed/lifecycle-runtime-2.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.4.0] /Users/zhenkai/.gradle/caches/transforms-3/08401c942d4ef36f67e84e342245fed9/transformed/lifecycle-runtime-2.4.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/zhenkai/.gradle/caches/transforms-3/cf3885704c6af9c62ca3d8e7b1039637/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /Users/zhenkai/.gradle/caches/transforms-3/cf3885704c6af9c62ca3d8e7b1039637/transformed/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/97fc2645befa4522c74ff83cbf6ee14a/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/97fc2645befa4522c74ff83cbf6ee14a/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/89d8afeba275dfd1fdb2b505ace74a6d/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/89d8afeba275dfd1fdb2b505ace74a6d/transformed/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/0a3148129294105f14b005d3050ed31d/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/0a3148129294105f14b005d3050ed31d/transformed/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/027b873c1d25365e2c1c8979817bf2d2/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/027b873c1d25365e2c1c8979817bf2d2/transformed/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/82627942c51ef9f7eda020dca66911ac/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.1.0] /Users/zhenkai/.gradle/caches/transforms-3/82627942c51ef9f7eda020dca66911ac/transformed/jetified-annotation-experimental-1.1.0/AndroidManifest.xml:20:5-22:41
+INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml
+INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml
+		ADDED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml
+		INJECTED from /Users/zhenkai/Desktop/OnlyPlants/app/src/main/AndroidManifest.xml
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/72ff2e44a4a4e353825c52394dd1a4ce/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /Users/zhenkai/.gradle/caches/transforms-3/6858fe32a78fec65579144f84de115c2/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.4.0] /Users/zhenkai/.gradle/caches/transforms-3/6858fe32a78fec65579144f84de115c2/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:26:9-34:20
+MERGED from [androidx.startup:startup-runtime:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/d7eea96fd4fd983bd01b2b76cfd4900d/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/d7eea96fd4fd983bd01b2b76cfd4900d/transformed/jetified-startup-runtime-1.0.0/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/72ff2e44a4a4e353825c52394dd1a4ce/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:30:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/72ff2e44a4a4e353825c52394dd1a4ce/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/72ff2e44a4a4e353825c52394dd1a4ce/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/72ff2e44a4a4e353825c52394dd1a4ce/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/72ff2e44a4a4e353825c52394dd1a4ce/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/72ff2e44a4a4e353825c52394dd1a4ce/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.0.0] /Users/zhenkai/.gradle/caches/transforms-3/72ff2e44a4a4e353825c52394dd1a4ce/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.4.0] /Users/zhenkai/.gradle/caches/transforms-3/6858fe32a78fec65579144f84de115c2/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.0] /Users/zhenkai/.gradle/caches/transforms-3/6858fe32a78fec65579144f84de115c2/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.4.0] /Users/zhenkai/.gradle/caches/transforms-3/6858fe32a78fec65579144f84de115c2/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78

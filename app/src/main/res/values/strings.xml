@@ -1,3 +1,25 @@
 <resources>
     <string name="app_name">OnlyPlants</string>
+    <string name="reminderFormOption1">Select time</string>
+    <string name="reminderFormOption2">Select day(s)</string>
+    <string name="saveBtn">Save</string>
+    <string name="cancelBtn">Cancel</string>
+    <string name="select_time_to_set_reminder">Select time to set reminder</string>
+    <string name="select_day_s_to_set_reminder">Select day(s) to set reminder</string>
+    <string name="monday">Monday</string>
+    <string name="tuesday">Tuesday</string>
+    <string name="wednesday">Wednesday</string>
+    <string name="thursday">Thursday</string>
+    <string name="friday">Friday</string>
+    <string name="saturday">Saturday</string>
+    <string name="sunday">Sunday</string>
+    <string name="edit_reminder_settings">Edit reminder settings</string>
+    <string name="back">Back</string>
+    <string name="reminder_sent_at">Reminder sent at</string>
+    <string name="no_reminders_set">No Reminders Set</string>
+    <string name="loading">Loading…</string>
+    <string name="add">Add</string>
+    <string name="delete">Delete</string>
+    <string name="cancel">Cancel</string>
+    <string name="days_dialog_error_msg">Please select at least one option</string>
 </resources>

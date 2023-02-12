@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
 =======
@@ -16,6 +17,9 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
     <uses-permission android:name="android.permission.STORAGE"/>
 >>>>>>> feature-STT
+=======
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+>>>>>>> feature-reminder-service
 
     <application
         android:allowBackup="true"
@@ -26,15 +30,45 @@
         android:theme="@style/Theme.OnlyPlants">
         <activity
 <<<<<<< HEAD
+<<<<<<< HEAD
             android:name=".View.PlantInformation.PlantSearch"
             android:exported="true">
 =======
             android:name=".STTActivity"
+=======
+            android:name=".DeleteReminderActivity"
             android:exported="true">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
+        </activity>
+        <activity
+            android:name=".ListRemindersActivity"
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+
+        <service
+            android:name=".Model.myFirebaseMessagingService"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name=".ReminderFormActivity"
+>>>>>>> feature-reminder-service
+            android:exported="true">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+<<<<<<< HEAD
 >>>>>>> feature-STT
+=======
+>>>>>>> feature-reminder-service
         </activity>
         <activity
             android:name=".MainActivity"

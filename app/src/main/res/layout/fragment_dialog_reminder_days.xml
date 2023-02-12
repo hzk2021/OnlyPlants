@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/select_day_s_to_set_reminder"
+        android:layout_margin="20dp"
+        android:textSize="25sp">
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/radioGrp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp">
+
+        <RadioButton
+            android:id="@+id/everydayRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Everyday"
+            android:tag="*">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/customRB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Custom">
+        </RadioButton>
+
+    </RadioGroup>
+
+
+    <LinearLayout
+        android:id="@+id/CBgroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="40dp">
+
+        <CheckBox
+            android:id="@+id/monCB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/monday"
+            android:tag="MON"
+            android:enabled="false">
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/tueCB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/tuesday"
+            android:tag="TUE"
+            android:enabled="false">
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/wedCB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/wednesday"
+            android:tag="WED"
+            android:enabled="false">
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/thuCB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/thursday"
+            android:tag="THU"
+            android:enabled="false">
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/friCB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/friday"
+            android:tag="FRI"
+            android:enabled="false">
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/satCB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/saturday"
+            android:tag="SAT"
+            android:enabled="false">
+        </CheckBox>
+
+        <CheckBox
+            android:id="@+id/sunCB"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sunday"
+            android:tag="SUN"
+            android:enabled="false">
+        </CheckBox>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/errorMsg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="@color/design_default_color_error"
+        android:layout_marginStart="20dp"
+        android:visibility="gone">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/cancelBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancelBtn"
+            android:layout_margin="10dp"
+            android:backgroundTint="@color/design_default_color_error">
+        </Button>
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/saveBtn"
+            android:layout_margin="10dp">
+        </Button>
+
+    </LinearLayout>
+
+</LinearLayout>
