@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-onlyplants-dev-163753-authRole",
+      "UnauthRoleArn": "arn:aws:iam::785468729059:role/amplify-onlyplants-dev-163753-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::785468729059:role/amplify-onlyplants-dev-163753-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-onlyplants-dev-163753-deployment",
+      "UnauthRoleName": "amplify-onlyplants-dev-163753-unauthRole",
+      "StackName": "amplify-onlyplants-dev-163753",
+      "StackId": "arn:aws:cloudformation:us-east-1:785468729059:stack/amplify-onlyplants-dev-163753/65aeb9b0-a079-11ed-a912-0e14ea7591df",
+      "AmplifyAppId": "df3khosez2mhe"
+    },
+    "categories": {
+      "auth": {
+        "onlyplantseb034e22": {}
+      },
+      "geo": {
+        "MyMap": {}
+      }
+    }
+  }
+}

@@ -17,7 +17,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/red_marker" />
 
-    <TextView
+    <EditText
         android:id="@+id/description_text_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -36,4 +36,6 @@
         app:mapbox_foregroundLoadColor="@color/white"
         app:mapbox_renderTextureMode="true"
         app:mapbox_renderTextureTranslucentSurface="true" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
