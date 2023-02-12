@@ -1,4 +1,5 @@
 <resources>
+<<<<<<< HEAD
     <string name="app_name">OnlyPlants</string>
     <string name="reminderFormOption1">Select time</string>
     <string name="reminderFormOption2">Select day(s)</string>
@@ -22,4 +23,16 @@
     <string name="delete">Delete</string>
     <string name="cancel">Cancel</string>
     <string name="days_dialog_error_msg">Please select at least one option</string>
+=======
+    <string name="app_name"></string>
+    <string name="title_activity_add_post2">AddPost2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+>>>>>>> feature-Image-Moderation
 </resources>

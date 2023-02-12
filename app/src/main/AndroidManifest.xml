@@ -6,6 +6,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
 =======
@@ -20,6 +21,9 @@
 =======
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 >>>>>>> feature-reminder-service
+=======
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+>>>>>>> feature-Image-Moderation
 
     <application
         android:allowBackup="true"
@@ -29,6 +33,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlyPlants">
         <activity
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
             android:name=".View.PlantInformation.PlantSearch"
@@ -72,6 +77,12 @@
         </activity>
         <activity
             android:name=".MainActivity"
+=======
+            android:name=".MonitorPlants"
+            android:exported="false" />
+        <activity
+            android:name=".Home"
+>>>>>>> feature-Image-Moderation
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -80,6 +91,7 @@
             </intent-filter>
         </activity>
         <activity
+<<<<<<< HEAD
             android:name=".View.LanguageTranslate.LanguageTranslateActivity"
             android:exported="true" />
         <activity
@@ -94,6 +106,13 @@
         <activity
             android:name=".View.PlantInformation.PlantInformationActivity"
             android:exported="false" />
+=======
+            android:name=".AddPost"
+            android:exported="false"></activity>
+        <activity
+            android:name=".Post"
+            android:exported="false"></activity>
+>>>>>>> feature-Image-Moderation
     </application>
 
 </manifest>
