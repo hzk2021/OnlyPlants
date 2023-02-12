@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/micIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_mic_24"
+        android:layout_marginTop="10dp"
+        android:contentDescription="Microphone Image">
+    </ImageView>
+
+    <TextView
+        android:id="@+id/textIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Listening for speech..."
+        android:layout_margin="20dp">
+    </TextView>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/stopBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            android:layout_margin="20dp"
+            android:backgroundTint="@color/design_default_color_error">
+        </Button>
+
+        <Button
+            android:id="@+id/searchStrBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:layout_margin="20dp">
+        </Button>
+
+    </LinearLayout>
+
+
+</LinearLayout>
