@@ -8,6 +8,7 @@ import okhttp3.RequestBody.Companion.toRequestBody
 import org.json.JSONObject
 
 
+
 class ttsService {
 
     // Initialize client and url paths
@@ -20,12 +21,11 @@ class ttsService {
     private val getRaPath = "/test/retrieveaudio"
 
     // Function to convert text to audio
-    fun ConvertTTS( text : String, voice : String, flower : String) {
+    fun convertTTS(text : String, flower : String) {
 
         // Put parameters into JSON
         val json = JSONObject()
         json.put("text", text)
-        json.put("voice", voice)
         json.put("flower", flower)
 
         val body = json.toString().toRequestBody(("application/json").toMediaType())
@@ -48,7 +48,7 @@ class ttsService {
             else {
                 Log.d("responseMsg", "conversion failed")
                 Log.d("responsefullMsg", response.code.toString())
-                Log.d("responsefullMsg", response.body.string())
+                Log.d("responsefullMsg", response.body.toString())
             }
         } catch (e: Exception) {
             Log.d("responseMsg", "code failed")
@@ -82,15 +82,18 @@ class ttsService {
             if (response.isSuccessful) {
                 Log.d("responseMsg", "retrieve successful")
 
-                // Code for nullarray
+                val resp = response.body.string()
+
+                // Sometimes error but returned as success (status code 200)
+                println("response: $resp")
 
                 // Decode response
-                decodedBody = getDecoder().decode(response.body.string())
+                decodedBody = getDecoder().decode(resp)
             }
             else {
                 Log.d("responseMsg", "retrieve failed")
                 Log.d("responsefullMsg", response.code.toString())
-                Log.d("responsefullMsg", response.body.string())
+                Log.d("responsefullMsg", response.body.toString())
             }
         } catch (e: Exception) {
             Log.d("responseMsg", "code failed")
