@@ -3,8 +3,12 @@
     package="com.nyp.sit.aws.project.onlyplants">
 
     <uses-permission android:name="android.permission.INTERNET" />
+<<<<<<< HEAD
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.CAMERA" />
+=======
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+>>>>>>> main
 
     <application
         android:allowBackup="true"
@@ -42,5 +46,6 @@
             android:name=".View.PlantInformation.PlantInformationActivity"
             android:exported="false" />
     </application>
+
 
 </manifest>
