@@ -1,4 +1,4 @@
-package com.nyp.sit.aws.project.onlyplants
+package com.nyp.sit.aws.project.onlyplants.View
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -18,6 +18,7 @@ import com.amplifyframework.geo.options.GeoSearchByCoordinatesOptions
 import com.mapbox.mapboxsdk.camera.CameraPosition
 import com.mapbox.mapboxsdk.geometry.LatLng
 import com.mapbox.mapboxsdk.maps.MapboxMap
+import com.nyp.sit.aws.project.onlyplants.R
 
 //import com.amazonaws.services.location.model.*
 //import com.amazonaws.mobileconnectors.geo.tracker.* // Required for Amazon Location Service
@@ -30,7 +31,7 @@ import com.mapbox.mapboxsdk.maps.MapboxMap
 //import java.util.*
 
 
-class LocationService : AppCompatActivity() {
+class LocationActivity : AppCompatActivity() {
 
     private val mapView by lazy {
         findViewById<MapLibreView>(R.id.mapView)
