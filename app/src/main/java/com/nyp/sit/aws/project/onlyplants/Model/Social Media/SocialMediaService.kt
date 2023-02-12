@@ -29,7 +29,7 @@ class SocialMediaService {
             val response = client.newCall(request).execute()
 
             if (response.isSuccessful) {
-                    Getallpost=response.body.string()
+                    Getallpost=response.body!!.string()
                     Log.d("GetAllPostReply" ,"Retrieve Success")
                 } else {
                     Log.d("PostRetrievalError", response.message)
@@ -55,7 +55,7 @@ class SocialMediaService {
         Log.d("Adding Plant Post to database", uriPath)
         val response = client.newCall(request).execute()
         if (response.isSuccessful) {
-            CreatePost=response.body.string()
+            CreatePost=response.body!!.string()
             Log.d("Result" ,"Create Success")
         } else {
             Log.d("PostRetrievalError", response.message)
@@ -78,7 +78,7 @@ class SocialMediaService {
         Log.d("Checking For Moderated Content", uriPath)
         val response = client.newCall(request).execute()
         if (response.isSuccessful) {
-            detectmoderation=response.body.string()
+            detectmoderation=response.body!!.string()
             Log.d("Result", detectmoderation)
         } else {
             Log.d("PostRetrievalError", response.message)
@@ -101,7 +101,7 @@ class SocialMediaService {
         Log.d("Uploading Image To S3", uriPath)
         val response = client.newCall(request).execute()
         if (response.isSuccessful) {
-            uploadimagetos3=response.body.string()
+            uploadimagetos3=response.body!!.string()
             Log.d("Result", uploadimagetos3)
         } else {
             Log.d("PostRetrievalError", response.message)

@@ -15,8 +15,6 @@ import android.util.Log
 import android.webkit.MimeTypeMap
 import android.widget.ImageButton
 import android.widget.TextView
-import aws.sdk.kotlin.services.dynamodb.model.AttributeValue
-import aws.smithy.kotlin.runtime.content.ByteStream
 import com.nyp.sit.aws.project.onlyplants.Model.Social.SocialMediaService
 import kotlinx.android.synthetic.main.activity_post.*
 import kotlinx.coroutines.*

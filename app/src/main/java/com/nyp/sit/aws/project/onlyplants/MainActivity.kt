@@ -6,8 +6,6 @@ import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
 
-    val credentials = Credentials.learnersLab
-
     override fun onCreate(savedInstanceState: Bundle?) : Unit = runBlocking{
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

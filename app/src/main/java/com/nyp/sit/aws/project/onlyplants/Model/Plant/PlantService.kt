@@ -28,7 +28,7 @@ class PlantService : IPlantService {
         val response = client.newCall(request).execute()
 
         if (response.isSuccessful) {
-            plantInfo = response.body.string().replace("\"", "").replace("\\n"," ")
+            plantInfo = response.body!!.string().replace("\"", "").replace("\\n"," ")
             Log.d("PlantInfoReply", plantInfo)
         } else {
             Log.d("PlantInfoRetrievalError", response.message)
@@ -53,10 +53,10 @@ class PlantService : IPlantService {
         val response = client.newCall(request).execute()
 
         if (response.isSuccessful) {
-            plantType = response.body.string()
+            plantType = response.body!!.string()
             Log.d("PlantTypeReply", plantType)
         } else {
-            plantType = response.body.string()
+            plantType = response.body!!.string()
             Log.d("PlantTypeRetrievalError", plantType)
         }
 

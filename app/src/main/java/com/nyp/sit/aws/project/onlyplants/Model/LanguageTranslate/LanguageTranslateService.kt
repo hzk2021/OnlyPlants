@@ -26,7 +26,7 @@ class LanguageTranslateService {
         val response = client.newCall(request).execute()
 
         if (response.isSuccessful) {
-            translatedText = response.body.string().replace("\"", "").replace("\\\\u([0-9A-Fa-f]{4})".toRegex()){
+            translatedText = response.body!!.string().replace("\"", "").replace("\\\\u([0-9A-Fa-f]{4})".toRegex()){
                 val codePoint = Integer.parseInt(it.groupValues[1],16)
                 String(Character.toChars(codePoint))
             }
