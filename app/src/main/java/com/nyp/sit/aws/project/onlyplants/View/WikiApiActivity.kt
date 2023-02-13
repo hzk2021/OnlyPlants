@@ -1,9 +1,11 @@
 package com.nyp.sit.aws.project.onlyplants
 
+import android.app.Activity
 import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.speech.RecognizerIntent
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
@@ -16,6 +18,7 @@ import kotlinx.coroutines.*
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
+import java.util.*
 
 class WikiApiService : AppCompatActivity() {
 
@@ -68,6 +71,7 @@ class WikiApiService : AppCompatActivity() {
                 invalidateOptionsMenu()
                 displayToast("Audio stopped")
             }
+            R.id.sttBtn -> transcribe()
         }
 
         return super.onOptionsItemSelected(item)
@@ -211,5 +215,34 @@ class WikiApiService : AppCompatActivity() {
 
     private fun displayToast(msg: String) {
         return Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
+
+    // Speech to test service
+    // Function to convert speech to text
+    private fun transcribe() {
+        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+        intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE, Locale.getDefault())
+        intent.putExtra(RecognizerIntent.EXTRA_PROMPT, "Speech to text")
+
+        try
+        {
+            startActivityForResult(intent, 10)
+        }
+        catch (ex: Exception)
+        {
+            Toast.makeText(this,"Your Device Doesn't Support It", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        when (requestCode) {
+            10 -> if (resultCode == Activity.RESULT_OK && data != null) {
+                val result = data.getStringArrayListExtra(RecognizerIntent.EXTRA_RESULTS)
+                input_et.setText(result!![0])
+            }
+        }
     }
 }

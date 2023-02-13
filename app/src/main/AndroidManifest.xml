@@ -97,9 +97,6 @@
                 android:name="android.app.lib_name"
                 android:value="" />
         </activity>
-        <activity
-            android:name=".STTActivity"
-            android:exported="true" />
 
     </application>
 

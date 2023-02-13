@@ -17,4 +17,10 @@
         android:visible="false">
     </item>
 
+    <item
+        android:id="@+id/sttBtn"
+        android:title="@string/search_using_voice"
+        app:showAsAction="never">
+    </item>
+
 </menu>

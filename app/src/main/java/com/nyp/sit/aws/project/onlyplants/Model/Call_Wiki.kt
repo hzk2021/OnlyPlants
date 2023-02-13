@@ -68,10 +68,15 @@ class Call_Wiki {
             val respBody = jsonResponse.getString("body")
             Log.d("Post Success", respBody)
 
-            // Convert text to audio
-            convertTTS(respBody, search)
+            if (respBody == "...") {
+                return "No results found for: $search"
+            }
+            else {
+                // Convert text to audio
+                convertTTS(respBody, search)
 
-            return respBody
+                return respBody
+            }
         } else {
              Log.d("Error", responseCode.toString())
             return responseCode.toString()
