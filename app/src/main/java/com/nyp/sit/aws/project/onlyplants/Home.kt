@@ -26,6 +26,7 @@ import org.json.JSONException
 
 class Home : AppCompatActivity() {
     private lateinit var addbutton: ImageView
+    private lateinit var emptyposttext: TextView
     var test=""
 
     private fun setupRecyclerView(posts: List<Post>) {
@@ -54,7 +55,10 @@ class Home : AppCompatActivity() {
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_home)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+
         addbutton = findViewById<ImageView>(R.id.addbutton)
+        emptyposttext=findViewById<TextView>(R.id.postnulltext)
+
         addbutton.setOnClickListener {
             val intent = Intent(this, AddPost::class.java)
             startActivity(intent)
@@ -62,8 +66,14 @@ class Home : AppCompatActivity() {
         GlobalScope.launch(Dispatchers.IO) {
             test = SocialMediaService().GetAllPost()
             val posts = parseJson(test)
-            runOnUiThread {
-                setupRecyclerView(posts)
+            if (posts.isEmpty()){
+                emptyposttext.visibility=View.VISIBLE
+            }
+            else {
+                runOnUiThread {
+                    emptyposttext.visibility=View.GONE
+                    setupRecyclerView(posts)
+                }
             }
         }
 //        bottom_navigation.setOnNavigationItemSelectedListener { item ->

@@ -61,12 +61,22 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recycler_view_story"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </androidx.recyclerview.widget.RecyclerView>
+                android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
 
 
         </LinearLayout>
 
+
     </androidx.core.widget.NestedScrollView>
 
+    <TextView
+        android:id="@+id/postnulltext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_centerInParent="true"
+        android:textSize="25dp"
+        android:visibility="invisible"
+        android:textStyle="bold"
+        android:text="No Posts" />
 </RelativeLayout>

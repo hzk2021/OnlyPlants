@@ -7,12 +7,14 @@ import android.widget.ImageView
 import android.provider.MediaStore
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.graphics.Color
 import android.media.Image
 import android.net.Uri
 import java.io.ByteArrayOutputStream
 import android.util.Base64;
 import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import android.webkit.MimeTypeMap
 import android.widget.ImageButton
 import android.widget.TextView
@@ -24,7 +26,7 @@ import android.widget.Toast
 
 class AddPost : AppCompatActivity() {
     private lateinit var imageView: ImageView
-    private lateinit var imagebuttontest:ImageButton
+    private lateinit var buttonadd:ImageButton
     private lateinit var captiontext:TextView
     private lateinit var closebutton : ImageButton
     var pictureexist=false
@@ -41,9 +43,10 @@ class AddPost : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         imageView = findViewById<ImageView>(R.id.picture_to_be_posted)
-        imagebuttontest=findViewById<ImageButton>(R.id.post_picture)
+        buttonadd=findViewById<ImageButton>(R.id.post_picture)
         captiontext=findViewById<TextView>(R.id.write_caption)
         closebutton=findViewById(R.id.dont_post_picture)
+        val overlay = findViewById<View>(R.id.overlay)
         imageView.setOnClickListener{
             pickImageFromGallery()
         }
@@ -51,8 +54,14 @@ class AddPost : AppCompatActivity() {
             val intent = Intent(this, Home::class.java)
             startActivity(intent)
         }
-        imagebuttontest.setOnClickListener {
+        buttonadd.setOnClickListener {
             if((captiontext.text.toString().trim()!="") and pictureexist) {
+                closebutton.isEnabled=false
+                buttonadd.isEnabled=false
+                imageView.isEnabled=false
+                overlay.setBackgroundColor(Color.GRAY)
+                overlay.background.alpha=200
+                overlay.visibility=View.VISIBLE
                 GlobalScope.launch(Dispatchers.IO) {
                     val imageurl = SocialMediaService().UploadImageToS3(base64Image)
                     if (imageurl.trim() != "") {
@@ -77,6 +86,7 @@ class AddPost : AppCompatActivity() {
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         val selectedimage = data?.data
+        pictureexist=false
         if (requestCode == 100 && resultCode == RESULT_OK) {
             if (selectedimage != null) {
                 val imageUri: Uri = selectedimage
@@ -102,8 +112,9 @@ class AddPost : AppCompatActivity() {
                         }
 
                     } else{
+                        pictureexist=false
                         runOnUiThread{
-                            imageView.setImageURI(null)
+                            imageView.setImageResource(R.drawable.add_image_icon)
                             showToast("Picture Contains Moderated Content.\nTry Again Without adding pictures that are not allowed!")
                         }
                     }
