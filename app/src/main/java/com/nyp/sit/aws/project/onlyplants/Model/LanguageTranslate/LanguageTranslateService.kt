@@ -8,7 +8,7 @@ class LanguageTranslateService {
 
     private val client = OkHttpClient()
     private val protocol = "https://"
-    private val domain = "hk0r447bo2.execute-api.us-east-1.amazonaws.com"
+    private val domain = "kbqsvtu5gd.execute-api.us-east-1.amazonaws.com"
     private val getTranslatedTextPath = "/prod/translate"
     //private val parameters = "?action=query&format=json&list=search&utf8=1&formatversion=2&srsearch="
     //private val postfix = "%20plant"

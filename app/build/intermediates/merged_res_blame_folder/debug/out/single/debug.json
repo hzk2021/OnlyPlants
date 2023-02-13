@@ -1,55 +1,103 @@
 [
     {
-        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable-anydpi_ic_home.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/debug/res/drawable-anydpi/ic_home.xml"
     },
     {
-        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_main.xml.flat",
-        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_main.xml"
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_delete_reminder.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_delete_reminder.xml"
     },
     {
-        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_plant_identifier.xml.flat",
-        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_plant_identifier.xml"
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/menu_play_audio_menu.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/menu/play_audio_menu.xml"
     },
     {
-        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_plant_search.xml.flat",
-        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_plant_search.xml"
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable-mdpi_ic_home.png.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/debug/res/drawable-mdpi/ic_home.png"
     },
     {
-        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable_red_marker.png.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable/red_marker.png"
     },
     {
-        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_plant_information.xml.flat",
-        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_plant_information.xml"
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_wiki_api.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_wiki_api.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable_ic_baseline_store_24.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable/ic_baseline_store_24.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable_ic_baseline_insert_comment_24.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable/ic_baseline_insert_comment_24.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_location_service.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_location_service.xml"
     },
     {
         "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable-v24_ic_launcher_foreground.xml.flat",
         "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable-v24/ic_launcher_foreground.xml"
     },
     {
-        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_monitor_plants.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_monitor_plants.xml"
     },
     {
-        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_reminder_form.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_reminder_form.xml"
     },
     {
-        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-hdpi/ic_launcher.webp"
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_language_translate.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_language_translate.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable-v24_close.png.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable-v24/close.png"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/menu_delete_menu.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/menu/delete_menu.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-xhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/menu_cancel_delete_menu.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/menu/cancel_delete_menu.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable-v24_save_edited_info.png.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable-v24/save_edited_info.png"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_fragment_dialog_reminder_time.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/fragment_dialog_reminder_time.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_fragment_dialog_reminder_days.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/fragment_dialog_reminder_days.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable-v24_send_icon.png.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable-v24/send_icon.png"
     },
     {
         "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher_round.webp.flat",
         "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_popup_translate.xml.flat",
-        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/popup_translate.xml"
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable-mdpi_add_icon.png.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable-mdpi/add_icon.png"
     },
     {
         "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable_ic_launcher_background.xml.flat",
@@ -60,14 +108,6 @@
         "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable/back.xml"
     },
     {
-        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-mdpi/ic_launcher.webp"
-    },
-    {
-        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp"
-    },
-    {
         "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_select_photo.xml.flat",
         "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_select_photo.xml"
     },
@@ -76,15 +116,155 @@
         "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp"
     },
     {
-        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_language_translate.xml.flat",
-        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_language_translate.xml"
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable-xxhdpi_add_icon.png.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable-xxhdpi/add_icon.png"
     },
     {
-        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable_ic_baseline_info_24.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable/ic_baseline_info_24.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_main.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable_ic_baseline_local_florist_24.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable/ic_baseline_local_florist_24.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_plant_identifier.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_plant_identifier.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable_text_view_background.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable/text_view_background.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable_navbar_selector.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable/navbar_selector.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/raw_amplifyconfiguration.json.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/raw/amplifyconfiguration.json"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_plant_information.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_plant_information.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable_ic_baseline_water_drop_24.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable/ic_baseline_water_drop_24.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable_ic_baseline_language_24.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable/ic_baseline_language_24.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable-xhdpi_add_icon.png.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable-xhdpi/add_icon.png"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/raw_awsconfiguration.json.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/raw/awsconfiguration.json"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable-xxhdpi_ic_home.png.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/debug/res/drawable-xxhdpi/ic_home.png"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_add_post.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_add_post.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-mdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_post.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_post.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_home.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_home.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable-v24_onlyplantslogo.png.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable-v24/onlyplantslogo.png"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_plant_search.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_plant_search.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable_ic_baseline_search_24.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable/ic_baseline_search_24.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_sttactivity.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_sttactivity.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/navigation_nav_graph.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/navigation/nav_graph.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_fragment_dialog_stt.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/fragment_dialog_stt.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-hdpi/ic_launcher.webp"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_popup_translate.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/popup_translate.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable-v24_add_image_icon.png.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable-v24/add_image_icon.png"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable-hdpi_ic_home.png.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/debug/res/drawable-hdpi/ic_home.png"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable-xhdpi_ic_home.png.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/debug/res/drawable-xhdpi/ic_home.png"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable-hdpi_add_icon.png.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable-hdpi/add_icon.png"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable_ic_baseline_mic_24.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable/ic_baseline_mic_24.xml"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/layout_activity_list_reminders.xml.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/layout/activity_list_reminders.xml"
     },
     {
         "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/mipmap-mdpi_ic_launcher_round.webp.flat",
         "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp"
+    },
+    {
+        "merged": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/merged_res/debug/drawable-xxxhdpi_add_icon.png.flat",
+        "source": "/Users/zhenkai/Desktop/OnlyPlants/app/src/main/res/drawable-xxxhdpi/add_icon.png"
     }
 ]

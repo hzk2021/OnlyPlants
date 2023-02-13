@@ -46,8 +46,8 @@ class PlantIdentifierActivity : AppCompatActivity() {
         pid_B_DetectPlant.setOnClickListener {
             if (encodedImage != null) {
                 GlobalScope.launch {
-                    val result = "Food"
-                    //val result = PlantService().GetPlantType(encodedImage!!)
+                    //val result = "Food"
+                    val result = PlantService().GetPlantType(encodedImage!!)
 
                     val plantInfoIntent = Intent(this@PlantIdentifierActivity, PlantInformationActivity::class.java)
                     plantInfoIntent.putExtra("plant_image", encodedImage!!.toByteArray())
@@ -70,7 +70,7 @@ class PlantIdentifierActivity : AppCompatActivity() {
 
             val options = BitmapFactory.Options()
             options.inJustDecodeBounds = false
-            options.inSampleSize = 2
+            options.inSampleSize = 3
 
             val selectedImage = BitmapFactory.decodeStream(imageStream, null, options)
             encodedImage = encodeImage(selectedImage!!)

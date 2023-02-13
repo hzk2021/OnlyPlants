@@ -9,7 +9,7 @@ class PlantService : IPlantService {
 
     private val client = OkHttpClient()
     private val protocol = "https://"
-    private val domain = "hk0r447bo2.execute-api.us-east-1.amazonaws.com"
+    private val domain = "kbqsvtu5gd.execute-api.us-east-1.amazonaws.com"
     private val getPlantInfoPath = "/prod/plant/information"
     private val getPlantTypePath = "/prod/plant/type"
     //private val parameters = "?action=query&format=json&list=search&utf8=1&formatversion=2&srsearch="
@@ -57,6 +57,10 @@ class PlantService : IPlantService {
             Log.d("PlantTypeReply", plantType)
         } else {
             plantType = response.body!!.string()
+
+            if (plantType.contains("Internal server error")) {
+                plantType = "Not a plant"
+            }
             Log.d("PlantTypeRetrievalError", plantType)
         }
 

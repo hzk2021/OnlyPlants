@@ -4,7 +4,7 @@
             "outputFile": "/Users/zhenkai/Desktop/OnlyPlants/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "/Users/zhenkai/.gradle/caches/transforms-3/50a611762f03b8296ce0baea2a36cc61/transformed/appcompat-1.4.1/res/values-v23/values-v23.xml",
+                    "source": "/Users/zhenkai/.gradle/caches/transforms-3/7b0901dbcc26c1ff3bb1e0329c58002c/transformed/appcompat-1.4.1/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "/Users/zhenkai/.gradle/caches/transforms-3/5d00cbdce1d57f63ebb092d2bdb5e7a3/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
+                    "source": "/Users/zhenkai/.gradle/caches/transforms-3/c24f041dea1bcf027ec1927fb2457c92/transformed/cardview-1.0.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -34,7 +34,7 @@
                     }
                 },
                 {
-                    "source": "/Users/zhenkai/.gradle/caches/transforms-3/9746c7c6921127fe4af42283545d20b5/transformed/material-1.5.0/res/values-v23/values-v23.xml",
+                    "source": "/Users/zhenkai/.gradle/caches/transforms-3/72fcbf457e901560bba9fb06c55b708d/transformed/material-1.5.0/res/values-v23/values-v23.xml",
                     "from": {
                         "startLines": "2,5,8,13,17,20,23,26,31,34,38",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4",
