@@ -3,7 +3,6 @@ package com.nyp.sit.aws.project.onlyplants
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
 import android.provider.MediaStore
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -16,19 +15,19 @@ import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.webkit.MimeTypeMap
-import android.widget.ImageButton
-import android.widget.TextView
+import android.widget.*
 import com.nyp.sit.aws.project.onlyplants.Model.Social.SocialMediaService
 import kotlinx.android.synthetic.main.activity_post.*
 import kotlinx.coroutines.*
 import okhttp3.Dispatcher
-import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_add_post.*
 
 class AddPost : AppCompatActivity() {
     private lateinit var imageView: ImageView
     private lateinit var buttonadd:ImageButton
     private lateinit var captiontext:TextView
     private lateinit var closebutton : ImageButton
+    private lateinit var toolbar : Toolbar
     var pictureexist=false
     var moderationresult=""
     var base64Image=""
@@ -38,6 +37,7 @@ class AddPost : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_post)
+
 
         supportActionBar?.setHomeAsUpIndicator(R.drawable.ic_home)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
