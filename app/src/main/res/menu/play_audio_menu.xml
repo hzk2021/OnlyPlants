@@ -19,7 +19,7 @@
 
     <item
         android:id="@+id/sttBtn"
-        android:title="@string/search_using_voice"
+        android:title="@string/use_speech_to_text"
         app:showAsAction="never">
     </item>
 

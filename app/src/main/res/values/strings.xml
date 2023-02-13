@@ -32,6 +32,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="play_audio">Play Audio</string>
     <string name="stop_playing_audio">Stop Playing Audio</string>
-    <string name="search_using_voice">Search using voice</string>
     <string name="translate">Translate</string>
+    <string name="use_speech_to_text">Use Speech-To-Text</string>
 </resources>
