@@ -1,16 +1,28 @@
 package com.nyp.sit.aws.project.onlyplants
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_wiki_api.*
 import kotlinx.coroutines.launch
 import com.nyp.sit.aws.project.onlyplants.Model.Call_Wiki
+import com.nyp.sit.aws.project.onlyplants.Model.networkService
+import com.nyp.sit.aws.project.onlyplants.Model.ttsService
 import kotlinx.coroutines.*
+import java.io.File
+import java.io.FileInputStream
+import java.io.FileOutputStream
 
 class WikiApiService : AppCompatActivity() {
+
+    private var mp: MediaPlayer? = null
+    private var retrieveState: Boolean = false
+    private var emptySearch: Boolean = true
+    private var searchStr: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +37,7 @@ class WikiApiService : AppCompatActivity() {
             // Check for empty string
             if (input.isBlank()) {
                 Toast.makeText(this, "Search cannot be empty", Toast.LENGTH_SHORT).show()
+                emptySearch = true
             }
             else {
                 val scope = CoroutineScope(Job() + Dispatchers.IO)
@@ -33,7 +46,9 @@ class WikiApiService : AppCompatActivity() {
                 scope.launch {
                     val response = singleJobItem.await()
                     runOnUiThread{result_id.text = response.toString()}
-
+                    emptySearch = false
+                    searchStr = input
+                    invalidateOptionsMenu()
                 }
             }
         }
@@ -46,10 +61,155 @@ class WikiApiService : AppCompatActivity() {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
+            R.id.playAudioBtn -> prepareAudio()
+            R.id.stopAudioBtn -> {
+                mp?.release()
+                mp = null
+                invalidateOptionsMenu()
+                displayToast("Audio stopped")
+            }
         }
 
         return super.onOptionsItemSelected(item)
     }
 
+    override fun onStop() {
 
+        if (mp?.isPlaying == true) {
+            mp?.release()
+            mp = null
+            retrieveState = false
+            invalidateOptionsMenu()
+            displayToast("Audio stopped")
+        }
+
+        super.onStop()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.play_audio_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onPrepareOptionsMenu(menu: Menu?): Boolean {
+
+        runOnUiThread {
+            if (emptySearch) {
+                menu?.findItem(R.id.playAudioBtn)?.isEnabled = false
+                menu?.findItem(R.id.playAudioBtn)?.isVisible = true
+                menu?.findItem(R.id.stopAudioBtn)?.isEnabled = false
+                menu?.findItem(R.id.stopAudioBtn)?.isVisible = false
+            }
+            else if (mp?.isPlaying == true) {
+                menu?.findItem(R.id.playAudioBtn)?.isEnabled = false
+                menu?.findItem(R.id.playAudioBtn)?.isVisible = false
+                menu?.findItem(R.id.stopAudioBtn)?.isEnabled = true
+                menu?.findItem(R.id.stopAudioBtn)?.isVisible = true
+            }
+            else if (mp?.isPlaying == false && !retrieveState) {
+                menu?.findItem(R.id.playAudioBtn)?.isEnabled = true
+                menu?.findItem(R.id.playAudioBtn)?.isVisible = true
+                menu?.findItem(R.id.stopAudioBtn)?.isEnabled = false
+                menu?.findItem(R.id.stopAudioBtn)?.isVisible = false
+            }
+            else if (retrieveState) {
+                menu?.findItem(R.id.playAudioBtn)?.isEnabled = false
+                menu?.findItem(R.id.playAudioBtn)?.isVisible = false
+                menu?.findItem(R.id.stopAudioBtn)?.isEnabled = false
+                menu?.findItem(R.id.stopAudioBtn)?.isVisible = true
+            }
+        }
+
+        return super.onPrepareOptionsMenu(menu)
+    }
+
+    private fun prepareAudio() {
+
+        if (!networkService().isOnline(this)) {
+            displayToast("No network connection. Unable to retrieve audio")
+            return
+        }
+
+        if (mp?.isPlaying == true) {
+            displayToast("Audio is already playing")
+            return
+        }
+
+
+        if (retrieveState) {
+            displayToast("Currently retrieving audio")
+            return
+        }
+
+        retrieveState = true
+        invalidateOptionsMenu()
+        displayToast("Retrieving audio")
+        val scope = CoroutineScope(Job() + Dispatchers.IO)
+        val singleJobItem = scope.async(Dispatchers.IO) { ttsService().retrieveAudio(searchStr) }
+
+        scope.launch {
+            val decodedBody: ByteArray? = singleJobItem.await()
+
+            if (decodedBody == null) {
+                runOnUiThread {
+                    displayToast("Failed to retrieve audio")
+                    retrieveState = false
+                    invalidateOptionsMenu()
+                }
+            }
+            else {
+                mp = MediaPlayer()
+
+                withContext(Dispatchers.IO) {
+                    // Create temporary file
+                    val tempMp3 = File.createTempFile("plantAudio", "mp3", applicationContext.cacheDir)
+                    tempMp3.deleteOnExit()
+
+                    val fos = FileOutputStream(tempMp3)
+                    fos.write(decodedBody)
+
+                    playAudio(tempMp3)
+                }
+            }
+        }
+    }
+
+    private fun playAudio(tempMp3: File) {
+        if (mp != null) {
+            mp!!.reset()
+
+            val fis = FileInputStream(tempMp3)
+            mp!!.setDataSource(fis.fd)
+
+            mp!!.prepareAsync()
+
+            // Play audio when ready
+            mp!!.setOnPreparedListener {
+                invalidateOptionsMenu()
+                retrieveState = false
+                invalidateOptionsMenu()
+                displayToast("Playing audio now")
+                mp!!.start()
+            }
+
+            // Display toast when audio finish playing
+            mp!!.setOnCompletionListener {
+                displayToast("Audio finished playing")
+                retrieveState = false
+                invalidateOptionsMenu()
+            }
+
+            // Display error
+            mp!!.setOnErrorListener { _, _, _ ->
+                displayToast("Error occurred while playing audio")
+                retrieveState = false
+                invalidateOptionsMenu()
+                true
+            }
+        }
+    }
+
+    private fun displayToast(msg: String) {
+        return Toast.makeText(this, msg, Toast.LENGTH_SHORT).show()
+    }
 }

@@ -1,5 +1,6 @@
 package com.nyp.sit.aws.project.onlyplants.Model
 import android.util.Log
+import kotlinx.coroutines.*
 import okhttp3.*
 import org.json.JSONObject
 
@@ -64,14 +65,29 @@ class Call_Wiki {
         if (responseCode == HttpURLConnection.HTTP_OK) {
             val responseData = conn.inputStream.bufferedReader().use(BufferedReader::readText)
             val jsonResponse = JSONObject(responseData)
-            val body = jsonResponse.getString("body")
-            Log.d("Post Success", body)
-            return body
+            val respBody = jsonResponse.getString("body")
+            Log.d("Post Success", respBody)
+
+            // Convert text to audio
+            convertTTS(respBody, search)
+
+            return respBody
         } else {
              Log.d("Error", responseCode.toString())
             return responseCode.toString()
         }
 
+    }
+
+    // Function to convert text to audio
+    private fun convertTTS(text: String, flower: String) {
+        val scope = CoroutineScope(Job() + Dispatchers.IO)
+        val singleJobItem =
+            scope.async(Dispatchers.IO) {
+                ttsService().convertTTS(text, flower)
+            }
+
+        scope.launch { singleJobItem.await() }
     }
 
 //    suspend fun GetPlantType(plant_image_in_bytes : ByteArray) : Deferred<String> = CoroutineScope(IO).async {
