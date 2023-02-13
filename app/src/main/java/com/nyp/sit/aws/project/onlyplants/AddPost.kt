@@ -74,6 +74,9 @@ class AddPost : AppCompatActivity() {
                     }
                 }
             }
+            else {
+                showToast("No picture selected/Empty caption")
+            }
         }
 
     }

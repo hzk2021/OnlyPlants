@@ -81,7 +81,7 @@ class PlantInformationActivity : AppCompatActivity() {
 
                         val rootView = findViewById<ViewGroup>(android.R.id.content)
 
-                        translateViews(rootView, fromLang, toLang)
+                        PlantService().translateViews(rootView, fromLang, toLang)
                     }
 
                 }
@@ -100,26 +100,26 @@ class PlantInformationActivity : AppCompatActivity() {
 
     }
 
-    suspend fun translateViews(view: View, fromLang: String, toLang :String) {
-
-        if (view is TextView) {
-
-            if ((view !is Spinner)) {
-                val result = withContext(Dispatchers.IO) {
-                    LanguageTranslateService().GetTranslatedText(fromLang, toLang, view.text.toString())
-                }
-
-                runOnUiThread{
-                    view.text = result
-                }
-            }
-
-        } else if (view is ViewGroup) {
-            for (i in 0 until view.childCount) {
-                translateViews(view.getChildAt(i), fromLang, toLang)
-            }
-        }
-    }
+//    suspend fun translateViews(view: View, fromLang: String, toLang :String) {
+//
+//        if (view is TextView) {
+//
+//            if ((view !is Spinner)) {
+//                val result = withContext(Dispatchers.IO) {
+//                    LanguageTranslateService().GetTranslatedText(fromLang, toLang, view.text.toString())
+//                }
+//
+//                runOnUiThread{
+//                    view.text = result
+//                }
+//            }
+//
+//        } else if (view is ViewGroup) {
+//            for (i in 0 until view.childCount) {
+//                translateViews(view.getChildAt(i), fromLang, toLang)
+//            }
+//        }
+//    }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 

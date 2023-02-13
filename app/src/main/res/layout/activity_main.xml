@@ -114,7 +114,7 @@
                     android:layout_below="@id/bus1"
                     android:layout_centerHorizontal="true"
                     android:layout_marginTop="10dp"
-                    android:text="Find-A-Shop"
+                    android:text="Shop Identifier"
                     android:textSize="24sp"
                 />
                 <ImageView

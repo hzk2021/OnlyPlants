@@ -33,4 +33,5 @@
     <string name="play_audio">Play Audio</string>
     <string name="stop_playing_audio">Stop Playing Audio</string>
     <string name="search_using_voice">Search using voice</string>
+    <string name="translate">Translate</string>
 </resources>

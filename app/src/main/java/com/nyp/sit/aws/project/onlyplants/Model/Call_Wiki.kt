@@ -65,10 +65,19 @@ class Call_Wiki {
         if (responseCode == HttpURLConnection.HTTP_OK) {
             val responseData = conn.inputStream.bufferedReader().use(BufferedReader::readText)
             val jsonResponse = JSONObject(responseData)
-            val respBody = jsonResponse.getString("body")
-            Log.d("Post Success", respBody)
 
-            if (respBody == "...") {
+            var respBody: String = ""
+
+            try {
+                respBody = jsonResponse.getString("body")
+                Log.d("Post Success", respBody)
+            }
+            catch (e: Exception) {
+                Log.d("responseMsg", "unable to search for input string")
+                e.printStackTrace()
+            }
+
+            if (respBody == "..." || respBody.isBlank()) {
                 return "No results found for: $search"
             }
             else {

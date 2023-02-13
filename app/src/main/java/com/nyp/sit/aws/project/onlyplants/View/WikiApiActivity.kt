@@ -1,6 +1,7 @@
 package com.nyp.sit.aws.project.onlyplants
 
 import android.app.Activity
+import android.app.Dialog
 import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
@@ -8,10 +9,14 @@ import android.os.Bundle
 import android.speech.RecognizerIntent
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
+import android.view.View
+import android.view.ViewGroup
+import android.widget.*
 import kotlinx.android.synthetic.main.activity_wiki_api.*
 import kotlinx.coroutines.launch
 import com.nyp.sit.aws.project.onlyplants.Model.Call_Wiki
+import com.nyp.sit.aws.project.onlyplants.Model.LanguageTranslate.LanguageTranslateService
+import com.nyp.sit.aws.project.onlyplants.Model.Plant.PlantService
 import com.nyp.sit.aws.project.onlyplants.Model.networkService
 import com.nyp.sit.aws.project.onlyplants.Model.ttsService
 import kotlinx.coroutines.*
@@ -72,6 +77,37 @@ class WikiApiService : AppCompatActivity() {
                 displayToast("Audio stopped")
             }
             R.id.sttBtn -> transcribe()
+            R.id.translateBtn -> {
+                val dialog = Dialog(this)
+                dialog.setContentView(R.layout.popup_translate)
+                val spinner1 = dialog.findViewById<Spinner>(R.id.pu_FromLang)
+                val spinner2 = dialog.findViewById<Spinner>(R.id.pu_ToLang)
+                val button = dialog.findViewById<Button>(R.id.pu_Button_Translate)
+
+                val spinnerFromLang = dialog.findViewById<Spinner>(R.id.pu_FromLang)
+                val itemsFromLang = arrayOf("en", "fr", "zh")
+                val fromAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, itemsFromLang)
+
+                spinner1.adapter = fromAdapter
+                spinner2.adapter = fromAdapter
+
+                dialog.show()
+
+                button.setOnClickListener {
+
+                    GlobalScope.launch {
+                        dialog.dismiss()
+
+                        val fromLang = spinner1.selectedItem.toString()
+                        val toLang = spinner2.selectedItem.toString()
+
+                        val rootView = findViewById<ViewGroup>(android.R.id.content)
+
+                        PlantService().translateViews(rootView, fromLang, toLang)
+                    }
+
+                }
+            }
         }
 
         return super.onOptionsItemSelected(item)

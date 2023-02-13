@@ -1,17 +1,15 @@
 package com.nyp.sit.aws.project.onlyplants
 
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.ImageView
-import android.view.LayoutInflater;
-import android.view.MenuItem
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.view.*
+import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView;
+import com.nyp.sit.aws.project.onlyplants.Model.Plant.PlantService
 import com.squareup.picasso.Picasso;
 import com.nyp.sit.aws.project.onlyplants.Model.Social.Post
 import com.nyp.sit.aws.project.onlyplants.Model.Social.SocialMediaService
@@ -48,6 +46,56 @@ class Home : AppCompatActivity() {
         }
         return posts
     }
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.addbuttonmenu ,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_custom -> {
+                val intent = Intent(this, AddPost::class.java)
+                startActivity(intent)
+                return true
+            }
+            android.R.id.home -> {
+                val intent = Intent(this, MainActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.translateBtn -> {
+                val dialog = Dialog(this)
+                dialog.setContentView(R.layout.popup_translate)
+                val spinner1 = dialog.findViewById<Spinner>(R.id.pu_FromLang)
+                val spinner2 = dialog.findViewById<Spinner>(R.id.pu_ToLang)
+                val button = dialog.findViewById<Button>(R.id.pu_Button_Translate)
+
+                val spinnerFromLang = dialog.findViewById<Spinner>(R.id.pu_FromLang)
+                val itemsFromLang = arrayOf("en", "fr", "zh")
+                val fromAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, itemsFromLang)
+
+                spinner1.adapter = fromAdapter
+                spinner2.adapter = fromAdapter
+
+                dialog.show()
+
+                button.setOnClickListener {
+
+                    GlobalScope.launch {
+                        dialog.dismiss()
+
+                        val fromLang = spinner1.selectedItem.toString()
+                        val toLang = spinner2.selectedItem.toString()
+
+                        val rootView = findViewById<ViewGroup>(android.R.id.content)
+
+                        PlantService().translateViews(rootView, fromLang, toLang)
+                    }
+
+                }
+            }
+        }
+        return false
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
@@ -56,13 +104,13 @@ class Home : AppCompatActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
 
-        addbutton = findViewById<ImageView>(R.id.addbutton)
+//        addbutton = findViewById<ImageView>(R.id.addbutton)
         emptyposttext=findViewById<TextView>(R.id.postnulltext)
 
-        addbutton.setOnClickListener {
-            val intent = Intent(this, AddPost::class.java)
-            startActivity(intent)
-        }
+//        addbutton.setOnClickListener {
+//            val intent = Intent(this, AddPost::class.java)
+//            startActivity(intent)
+//        }
         GlobalScope.launch(Dispatchers.IO) {
             test = SocialMediaService().GetAllPost()
             val posts = parseJson(test)
@@ -76,24 +124,6 @@ class Home : AppCompatActivity() {
                 }
             }
         }
-//        bottom_navigation.setOnNavigationItemSelectedListener { item ->
-//            when (item.itemId) {
-//                R.id.menu_item_1 -> {
-//                    // handle menu item 1 click
-//                    true
-//                }
-//                R.id.menu_item_2 -> {
-//                    // handle menu item 2 click
-//                    true
-//                }
-//                R.id.menu_item_3 -> {
-//                    val intent = Intent(this, MonitorPlants::class.java)
-//                    startActivity(intent)
-//                    true
-//                }
-//                else -> false
-//            }
-//        }
 
     }
     class PostAdapter(private var posts: List<Post>) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
@@ -117,17 +147,5 @@ class Home : AppCompatActivity() {
         override fun getItemCount(): Int {
             return posts.size
         }
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-
-        when (item.itemId) {
-            android.R.id.home -> {
-                val intent = Intent(this, MainActivity::class.java)
-                startActivity(intent)
-            }
-        }
-
-        return super.onOptionsItemSelected(item)
     }
 }

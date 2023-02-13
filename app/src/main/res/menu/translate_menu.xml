@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <item
-        android:id="@+id/action_custom"
-        android:icon="@drawable/ic_baseline_add_circle_outline_24"
-        android:title="AddButton"
-        app:showAsAction="always" />
 
     <item
         android:id="@+id/translateBtn"
         android:title="@string/translate"
         app:showAsAction="never">
     </item>
+
 </menu>

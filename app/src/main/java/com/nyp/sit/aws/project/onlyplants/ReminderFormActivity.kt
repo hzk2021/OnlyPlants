@@ -1,16 +1,18 @@
 package com.nyp.sit.aws.project.onlyplants
 
+import android.app.Dialog
 import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.Menu
 import android.view.MenuItem
-import android.widget.ArrayAdapter
-import android.widget.ListView
-import android.widget.Toast
+import android.view.ViewGroup
+import android.widget.*
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
+import com.nyp.sit.aws.project.onlyplants.Model.Plant.PlantService
 import com.nyp.sit.aws.project.onlyplants.Model.reminderService
 import kotlinx.android.synthetic.main.activity_reminder_form.*
 import kotlinx.coroutines.*
@@ -116,12 +118,48 @@ class ReminderFormActivity : AppCompatActivity() {
         }
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.translate_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
 
         when (item.itemId) {
             android.R.id.home -> {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
+            }
+            R.id.translateBtn -> {
+                val dialog = Dialog(this)
+                dialog.setContentView(R.layout.popup_translate)
+                val spinner1 = dialog.findViewById<Spinner>(R.id.pu_FromLang)
+                val spinner2 = dialog.findViewById<Spinner>(R.id.pu_ToLang)
+                val button = dialog.findViewById<Button>(R.id.pu_Button_Translate)
+
+                val spinnerFromLang = dialog.findViewById<Spinner>(R.id.pu_FromLang)
+                val itemsFromLang = arrayOf("en", "fr", "zh")
+                val fromAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, itemsFromLang)
+
+                spinner1.adapter = fromAdapter
+                spinner2.adapter = fromAdapter
+
+                dialog.show()
+
+                button.setOnClickListener {
+
+                    GlobalScope.launch {
+                        dialog.dismiss()
+
+                        val fromLang = spinner1.selectedItem.toString()
+                        val toLang = spinner2.selectedItem.toString()
+
+                        val rootView = findViewById<ViewGroup>(android.R.id.content)
+
+                        PlantService().translateViews(rootView, fromLang, toLang)
+                    }
+
+                }
             }
         }
 

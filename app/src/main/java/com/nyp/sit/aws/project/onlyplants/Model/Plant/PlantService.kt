@@ -1,13 +1,25 @@
 package com.nyp.sit.aws.project.onlyplants.Model.Plant
 
 import android.util.Log
+import android.view.View
+import android.view.ViewGroup
+import android.widget.Spinner
+import android.widget.TextView
+import com.amazonaws.mobile.auth.core.internal.util.ThreadUtils.runOnUiThread
+import com.nyp.sit.aws.project.onlyplants.Model.LanguageTranslate.LanguageTranslateService
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.withContext
 import okhttp3.*
 import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.RequestBody.Companion.toRequestBody
+import java.util.concurrent.TimeUnit
 
 class PlantService : IPlantService {
 
-    private val client = OkHttpClient()
+    private var client = OkHttpClient()
+        .newBuilder()
+        .readTimeout(20000, TimeUnit.MILLISECONDS)
+        .build();
     private val protocol = "https://"
     private val domain = "kbqsvtu5gd.execute-api.us-east-1.amazonaws.com"
     private val getPlantInfoPath = "/prod/plant/information"
@@ -66,5 +78,26 @@ class PlantService : IPlantService {
 
         return plantType
 
+    }
+
+    suspend fun translateViews(view: View, fromLang: String, toLang :String) {
+
+        if (view is TextView) {
+
+            if ((view !is Spinner)) {
+                val result = withContext(Dispatchers.IO) {
+                    LanguageTranslateService().GetTranslatedText(fromLang, toLang, view.text.toString())
+                }
+
+                runOnUiThread{
+                    view.text = result
+                }
+            }
+
+        } else if (view is ViewGroup) {
+            for (i in 0 until view.childCount) {
+                translateViews(view.getChildAt(i), fromLang, toLang)
+            }
+        }
     }
 }

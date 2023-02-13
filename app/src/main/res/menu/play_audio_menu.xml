@@ -23,4 +23,10 @@
         app:showAsAction="never">
     </item>
 
+    <item
+        android:id="@+id/translateBtn"
+        android:title="@string/translate"
+        app:showAsAction="never">
+    </item>
+
 </menu>

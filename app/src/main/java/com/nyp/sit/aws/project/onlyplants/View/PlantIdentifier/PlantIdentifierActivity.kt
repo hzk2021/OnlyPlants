@@ -1,5 +1,6 @@
 package com.nyp.sit.aws.project.onlyplants.View.PlantIdentifier
 
+import android.app.Dialog
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -8,10 +9,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Base64
+import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.Toast
+import android.view.ViewGroup
+import android.widget.*
 import com.nyp.sit.aws.project.onlyplants.MainActivity
 import com.nyp.sit.aws.project.onlyplants.Model.Plant.PlantService
 import com.nyp.sit.aws.project.onlyplants.R
@@ -94,8 +95,44 @@ class PlantIdentifierActivity : AppCompatActivity() {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
             }
+            R.id.translateBtn -> {
+                val dialog = Dialog(this)
+                dialog.setContentView(R.layout.popup_translate)
+                val spinner1 = dialog.findViewById<Spinner>(R.id.pu_FromLang)
+                val spinner2 = dialog.findViewById<Spinner>(R.id.pu_ToLang)
+                val button = dialog.findViewById<Button>(R.id.pu_Button_Translate)
+
+                val spinnerFromLang = dialog.findViewById<Spinner>(R.id.pu_FromLang)
+                val itemsFromLang = arrayOf("en", "fr", "zh")
+                val fromAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_dropdown_item, itemsFromLang)
+
+                spinner1.adapter = fromAdapter
+                spinner2.adapter = fromAdapter
+
+                dialog.show()
+
+                button.setOnClickListener {
+
+                    GlobalScope.launch {
+                        dialog.dismiss()
+
+                        val fromLang = spinner1.selectedItem.toString()
+                        val toLang = spinner2.selectedItem.toString()
+
+                        val rootView = findViewById<ViewGroup>(android.R.id.content)
+
+                        PlantService().translateViews(rootView, fromLang, toLang)
+                    }
+
+                }
+            }
         }
 
         return super.onOptionsItemSelected(item)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.translate_menu, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 }
