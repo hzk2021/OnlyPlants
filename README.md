@@ -1,28 +1,31 @@
-<<<<<<< HEAD
+<div align=center>
+	<h1>OnlyPlants
+	<br>
+		<img src="https://img.shields.io/static/v1?label=&message=Amazon AWS&color=232F3E&style=for-the-badge&logo=amazonaws&logoColor=white&logoWidth=&labelColor=&link=">
+		<img src="https://img.shields.io/static/v1?label=&message=Kotlin&color=7F52FF&style=for-the-badge&logo=Kotlin&logoColor=white&logoWidth=&labelColor=&link=">
+		<img src="https://img.shields.io/static/v1?label=&message=Google STT&color=4285F4&style=for-the-badge&logo=google&logoColor=white&logoWidth=&labelColor=&link=">
+		<br>
+	</h1>
+</div>
+
+
 ## 🌱 OnlyPlants
+Rainforest deforestation is a major concern that causes trees to be cut down to provide more land. This activity has a global impact, affecting oxygen and carbon levels. Annually, rainforests like the Amazon suffer a loss of approximately 3-6 billion trees. This calls for communities worldwide to take initiative by proactively engaging in sustainability endeavours. Hence the birth of OnlyPlants.
 
-Spicy jalapeno bacon ipsum dolor amet andouille swine filet mignon, 
-leberkas beef ribs rump pork chop pig jerky tenderloin corned beef strip steak. 
-Kevin ribeye beef ribs ground round picanha kielbasa ham hock bresaola t-bone alcatra turducken. 
-Shankle chislic tongue pancetta meatloaf salami ground round. Shankle tri-tip kielbasa ham hock bacon, 
-pork belly flank frankfurter.
-=======
-## 🌱 OnlyPlants
+## Prerequisites (speech to text)
+1. Turn on Online Speech Recognition in OS
+-- Under Settings > Privacy > Speech, turn on Online Speech Recognition
+2. Have Google Speech Services installed in the emulator device
+-- Use a emulator with Play Store enabled E.g.: Pixel 2
+-- Install Speech Services by Google
 
-Prerequisites for Speech to Text function in Android Studio: (Windows OS)
-1) Turn on Online Speech Recognition in OS
-  - Under Settings > Privacy > Speech, turn on Online Speech Recognition
-2) Have Google Speech Services installed in the emulator device
-  - Use a emulator with Play Store enabled
-    E.g.: Pixel 2
-  - Install Speech Services by Google
-
-*Online Speech Recognition
-![image](https://user-images.githubusercontent.com/84306738/217890131-f267b339-697b-4dd5-822b-59020440e4de.png)
-
-*Emulator with Play Store
-![image](https://user-images.githubusercontent.com/84306738/217890600-74956843-26e1-44a9-bdad-81e3ef9e212f.png)
-
-*Google Speech Services in Play Store
-<img width="171" alt="image" src="https://user-images.githubusercontent.com/84306738/217891139-3f74308a-08f9-4100-8d56-4985adf5f406.png">
->>>>>>> feature-STT
+## Built Using
+<div style="display: flex; align-items:center; column-gap: 5px;">
+    - Kotlin <img height="16" width="16" src="https://cdn.simpleicons.org/kotlin" />
+</div>
+<div style="display: flex; align-items:center; column-gap: 5px;">
+    - Amazon Web Services <img height="16" width="16" src="https://cdn.simpleicons.org/amazonaws" />
+</div>
+<div style="display: flex; align-items:center; column-gap: 5px;">
+    - Google Speech-to-Text <img height="16" width="16" src="https://cdn.simpleicons.org/google" />
+</div>
