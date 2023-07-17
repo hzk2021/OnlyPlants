@@ -13,11 +13,17 @@
 Rainforest deforestation is a major concern that causes trees to be cut down to provide more land. This activity has a global impact, affecting oxygen and carbon levels. Annually, rainforests like the Amazon suffer a loss of approximately 3-6 billion trees. This calls for communities worldwide to take initiative by proactively engaging in sustainability endeavours. Hence the birth of OnlyPlants.
 
 ## Prerequisites (speech to text)
-1. Turn on Online Speech Recognition in OS
+1. An unrestrictive AWS account
+2. Properly provisioned AWS resources (see below)
+3. Turn on Online Speech Recognition in OS
 -- Under Settings > Privacy > Speech, turn on Online Speech Recognition
-2. Have Google Speech Services installed in the emulator device
+4. Have Google Speech Services installed in the emulator device
 -- Use a emulator with Play Store enabled E.g.: Pixel 2
 -- Install Speech Services by Google
+
+## Instruction (Plant Identifier, Wiki & Language Translation)
+- Unzip and run the AWS CDK script in the ECP-CDK folder to provision all neccessary infrastructure by code
+- Run Kotlin app
 
 ## Built Using
 <div style="display: flex; align-items:center; column-gap: 5px;">
